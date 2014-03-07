@@ -1,9 +1,10 @@
 //
-//  manager.cpp
+//  item.cpp
 //
 //  Paul Simpson
 //  Trevor Olson
 //
 
 
-#include "manager.h"
+
+#include "item.h"
