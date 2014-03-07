@@ -21,14 +21,14 @@ protected:
     int amount;
     
 public:
-    Item(string, int);
-    virtual ~Item();
+    Item(string = "", int = 0);
+  //  virtual ~Item();
     
-    virtual int hash() const;
-    virtual bool operator<(const Item &) const;
-    virtual bool operator>(const Item &) const;
-    virtual bool operator<=(const Item &) const;
-    virtual bool operator>=(const Item &) const;
+    virtual int hash() const = 0;
+ /*   virtual bool operator<(const Item &) const = 0;
+    virtual bool operator>(const Item &) const = 0;
+    virtual bool operator<=(const Item &) const = 0;
+    virtual bool operator>=(const Item &) const = 0; */
     
 };
 
