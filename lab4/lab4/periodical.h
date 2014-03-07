@@ -1,35 +1,32 @@
 //
-//  item.h
+//  periodical.h
 //
 //  Paul Simpson
 //  Trevor Olson
 //
 
-#ifndef ITEM_H
-#define ITEM_H
+#ifndef PERIODICAL_H
+#define PERIODICAL_H
 
 #include <iostream>
-#include <string>
-#include "hashable.h"
+#include "item.h"
 
 using namespace std;
 
-class Item : public Hashable {
+class Periodical : public Item {
     
 protected:
-    string title;
-    int amount;
+    int month;
+    int year;
     
 public:
-    Item(string, int);
-    virtual ~Item();
+    Periodical(string, int, int, int);
     
     virtual int hash() const;
     virtual bool operator<(const Item &) const;
     virtual bool operator>(const Item &) const;
     virtual bool operator<=(const Item &) const;
     virtual bool operator>=(const Item &) const;
-    
 };
 
 #endif

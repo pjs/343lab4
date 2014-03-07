@@ -1,23 +1,21 @@
 //
-//  manager.h
+//  hashable.h
 //
 //  Paul Simpson
 //  Trevor Olson
 //
 
-#ifndef MANAGER_H
-#define MANAGER_H
+#ifndef HASHABLE_H
+#define HASHABLE_H
 
 #include <iostream>
 
 using namespace std;
 
-class Manager {
-    
-protected:
-
+class Hashable {
     
 public:
+    virtual int hash() const;
     
 };
 
