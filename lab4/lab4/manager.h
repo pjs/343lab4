@@ -9,15 +9,24 @@
 #define MANAGER_H
 
 #include <iostream>
+#include "userfactory.h"
 
 using namespace std;
 
 class Manager {
     
-protected:
-
-    
 public:
+    Manager();
+    ~Manager();
+    
+    void run();
+    
+    
+private:
+    void buildUsers(istream &);
+    
+    
+    UserFactory userFact;
     
 };
 
