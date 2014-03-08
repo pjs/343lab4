@@ -1,8 +1,8 @@
 //
-// fictionBook.cpp
+//  fictionbook.cpp
 //
-// Paul Simpson
-// Trevor Olson
+//  Paul Simpson
+//  Trevor Olson
 //
 
 #include "fictionBook.h"
@@ -13,3 +13,4 @@ FictionBook::FictionBook(string author, string title, int year) :
 int FictionBook::hash() const{
 	return 'f' - 'a';
 }
+

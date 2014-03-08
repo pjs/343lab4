@@ -1,8 +1,8 @@
 //
-// youthBook.cpp
+//  youthbook.cpp
 //
-// Paul Simpson
-// Trevor Olson
+//  Paul Simpson
+//  Trevor Olson
 //
 
 #include "youthBook.h"
