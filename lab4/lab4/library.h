@@ -9,10 +9,21 @@
 #define LIBRARY_H
 
 #include <iostream>
+#include "bintree.h"
+#include "user.h"
 
 using namespace std;
 
 class Library {
+    
+public:
+    Library();
+    ~Library();
+    
+    void addUser(User*);
+    
+private:
+    BinTree Users;
     
 };
 
