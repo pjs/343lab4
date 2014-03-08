@@ -18,7 +18,10 @@ class UserFactory {
 public:
     UserFactory();
     ~UserFactory();
-    User* create(string data);
+    User* createIt(int);
+    
+private:
+    User* objFactory[1];
 };
 
 #endif

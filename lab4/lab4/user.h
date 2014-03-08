@@ -18,9 +18,13 @@ public:
     User();
     ~User();
     
+    User* create();
+    bool setData(istream &);
+    
 private:
-    string name;
-    int id;
+    string firstName;
+    string lastName;
+    int number;
 
 };
 
