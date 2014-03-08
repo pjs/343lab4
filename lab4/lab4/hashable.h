@@ -15,8 +15,7 @@ using namespace std;
 class Hashable {
     
 public:
-    virtual int hash() const = 0;
-    
+    virtual int hash() const = 0; 
 };
 
 #endif

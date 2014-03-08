@@ -22,8 +22,10 @@ protected:
 
 public:
     Book(string = "", string = "", int = 0);
+
       
     virtual int hash() const = 0;
+
 };
 
 #endif

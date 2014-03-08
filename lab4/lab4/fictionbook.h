@@ -1,5 +1,5 @@
 //
-//  fictionbook.h
+//  fictionBook.h
 //
 //  Paul Simpson
 //  Trevor Olson
@@ -22,12 +22,13 @@ public:
     FictionBook(string = "", string = "", int = 0);
     
     virtual int hash() const;
-    /*virtual bool operator<(const Item &) const;
+    virtual bool operator<(const Item &) const;
     virtual bool operator>(const Item &) const;
     virtual bool operator<=(const Item &) const;
-    virtual bool operator>=(const Item &) const;*/
+    virtual bool operator>=(const Item &) const;
+
+	
+	virtual bool operator==(const Item &) const;
 };
 
 #endif
-
-

@@ -1,8 +1,8 @@
 //
-//  fictionbook.cpp
+// fictionBook.cpp
 //
-//  Paul Simpson
-//  Trevor Olson
+// Paul Simpson
+// Trevor Olson
 //
 
 #include "fictionBook.h"
@@ -14,3 +14,34 @@ int FictionBook::hash() const{
 	return 'f' - 'a';
 }
 
+bool FictionBook::operator<(const Item & right) const{
+	const FictionBook& book = static_cast<const FictionBook&>(right);
+	if(this->author < book.author) return true;
+	if(this->title < book.title) return true;
+	return false; 
+}
+bool FictionBook::operator>(const Item & right) const{
+	const FictionBook& book = static_cast<const FictionBook&>(right);
+	if(this->author > book.author) return true;
+	if(this->title > book.title) return true;
+	return false; 
+}
+bool FictionBook::operator<=(const Item & right) const{
+	const FictionBook& book = static_cast<const FictionBook&>(right);
+	if(this->author <= book.author) return true;
+	if(this->title <= book.title) return true;
+	return false; 
+}
+bool FictionBook::operator>=(const Item & right) const{
+	const FictionBook& book = static_cast<const FictionBook&>(right);
+	if(this->author >= book.author) return true;
+	if(this->title >= book.title) return true;
+	return false; 
+}
+
+bool FictionBook::operator==(const Item & right) const{
+	const FictionBook& book = static_cast<const FictionBook&>(right);
+	if(this->author == book.author) return true;
+	if(this->title == book.title) return true;
+	return false; 
+}

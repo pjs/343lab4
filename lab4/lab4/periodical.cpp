@@ -18,6 +18,14 @@ int Periodical::hash() const{
 	return 'p' - 'a';
 }
 
-bool Periodical::operator<(const Item &) const{
-	
+bool Periodical::operator<(const Periodical & right) const{
+	if(this->month < right.month) return true;
+	if(this->year < right.year) return true;
+	return false;
+}
+
+bool Periodical::operator>(const Periodical & right) const{
+	if(this->month > right.month) return true;
+	if(this->year > right.year) return true;
+	return false;
 }

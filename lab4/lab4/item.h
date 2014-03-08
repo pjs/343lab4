@@ -23,14 +23,14 @@ protected:
 public:
     Item(string = "", int = 0);
   //  virtual ~Item();
-    
-	virtual void setData(ifstream &) = 0;
-    virtual int hash() const = 0;
+  //  virtual void setItem(ifstream &);
 
- /*   virtual bool operator<(const Item &) const = 0;
-    virtual bool operator>(const Item &) const = 0;
+	virtual bool operator<(const Item &) const = 0;
+	virtual bool operator>(const Item &) const = 0;
     virtual bool operator<=(const Item &) const = 0;
-    virtual bool operator>=(const Item &) const = 0; */
+    virtual bool operator>=(const Item &) const = 0;
+
+	virtual bool operator==(const Item &) const = 0;
     
 };
 
