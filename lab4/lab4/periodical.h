@@ -23,10 +23,11 @@ public:
     Periodical(string = "", int = 0, int = 0, int = 0);
     
     virtual int hash() const;
-    /*virtual bool operator<(const Item &) const;
-    virtual bool operator>(const Item &) const;
-    virtual bool operator<=(const Item &) const;
-    virtual bool operator>=(const Item &) const;*/
+    virtual bool operator<(const Periodical &) const;
+    virtual bool operator>(const Periodical &) const;
+    //virtual bool operator<=(const Periodical &) const;
+    //virtual bool operator>=(const Periodical &) const;
+
 };
 
 #endif
