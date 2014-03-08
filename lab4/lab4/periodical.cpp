@@ -17,3 +17,7 @@ Periodical::Periodical(string title, int amout, int month, int year)
 int Periodical::hash() const{
 	return 'p' - 'a';
 }
+
+bool Periodical::operator<(const Item &) const{
+	
+}
