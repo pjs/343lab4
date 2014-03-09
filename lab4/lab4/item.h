@@ -11,10 +11,11 @@
 #include <iostream>
 #include <string>
 #include "hashable.h"
+#include "nodedata.h"
 
 using namespace std;
 
-class Item : public Hashable {
+class Item : public Hashable,  public NodeData{
     
 protected:
     string title;
@@ -23,15 +24,6 @@ protected:
 public:
     Item(string = "", int = 0);
   //  virtual ~Item();
-  //  virtual void setItem(ifstream &);
-
-	virtual bool operator<(const Item &) const = 0;
-	virtual bool operator>(const Item &) const = 0;
-    virtual bool operator<=(const Item &) const = 0;
-    virtual bool operator>=(const Item &) const = 0;
-
-	virtual bool operator==(const Item &) const = 0;
-    
 };
 
 #endif

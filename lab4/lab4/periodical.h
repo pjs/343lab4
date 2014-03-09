@@ -8,7 +8,6 @@
 #ifndef PERIODICAL_H
 #define PERIODICAL_H
 
-#include <iostream>
 #include "item.h"
 
 using namespace std;
@@ -22,11 +21,19 @@ protected:
 public:
     Periodical(string = "", int = 0, int = 0, int = 0);
     
-    virtual int hash() const;
-    virtual bool operator<(const Periodical &) const;
-    virtual bool operator>(const Periodical &) const;
-    //virtual bool operator<=(const Periodical &) const;
-    //virtual bool operator>=(const Periodical &) const;
+    
+	virtual bool setData(istream &);
+
+	virtual int hash() const;
+
+    virtual bool operator<(const NodeData &) const;
+    virtual bool operator>(const NodeData &) const;
+    virtual bool operator<=(const NodeData &) const;
+    virtual bool operator>=(const NodeData &) const;
+
+	
+	virtual bool operator==(const NodeData &) const;
+	virtual bool operator!=(const NodeData &) const;
 
 };
 
