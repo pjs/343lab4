@@ -9,10 +9,11 @@
 #define USER_H
 
 #include <iostream>
+#include "nodedata.h"
 
 using namespace std;
 
-class User {
+class User : public NodeData {
 
 public:
     User();
@@ -20,6 +21,9 @@ public:
     
     User* create();
     bool setData(istream &);
+    
+    
+    virtual bool operator==(const NodeData &) const;
     
 private:
     string firstName;

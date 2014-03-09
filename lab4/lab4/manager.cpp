@@ -27,7 +27,8 @@ void Manager::buildUsers(istream& infile) {
         
         if (successfulRead) {
             
-            // put user in tree
+            // add user to library
+            library.addUser(ptr);
         }
         else {
             delete ptr;

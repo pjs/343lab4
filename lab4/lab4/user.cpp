@@ -40,3 +40,12 @@ bool User::setData(istream &infile) {
     
     return true;
 }
+
+bool User::operator==(const NodeData &right) const {
+	const User& user = static_cast<const User&>(right);
+    
+	if (number == user.number)
+        return true;
+    else
+        return false;
+}

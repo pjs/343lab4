@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include "userfactory.h"
+#include "library.h"
 
 using namespace std;
 
@@ -25,8 +26,11 @@ public:
 private:
     void buildUsers(istream &);
     
+    Library library;
     
     UserFactory userFact;
+    
+    
     
 };
 
