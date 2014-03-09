@@ -25,6 +25,7 @@ public:
 	virtual bool setData(istream &);
 
 	virtual int hash() const;
+    virtual Periodical* create();
 
     virtual bool operator<(const NodeData &) const;
     virtual bool operator>(const NodeData &) const;

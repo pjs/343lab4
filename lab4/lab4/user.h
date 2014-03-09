@@ -20,15 +20,19 @@ public:
     ~User();
     
     User* create();
-    bool setData(istream &);
-    
+    virtual bool setData(istream &);
     
     virtual bool operator==(const NodeData &) const;
+    virtual bool operator!=(const NodeData &) const;
+    virtual bool operator<(const NodeData &) const;
+    virtual bool operator>(const NodeData &) const;
+    virtual bool operator<=(const NodeData &) const;
+    virtual bool operator>=(const NodeData &) const;
     
 private:
     string firstName;
     string lastName;
-    int number;
+    int idNumber;
 
 };
 

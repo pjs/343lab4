@@ -23,6 +23,7 @@ public:
 	virtual bool setData(istream &);
 
 	virtual int hash() const;
+    virtual YouthBook* create();
 
     virtual bool operator<(const NodeData &) const;
     virtual bool operator>(const NodeData &) const;

@@ -10,6 +10,10 @@
 FictionBook::FictionBook(string author, string title, int year) : 
 	Book(author, title, year){}
 
+FictionBook::~FictionBook() {
+    
+}
+
 bool FictionBook::setData(istream & infile){
 	infile.get();   
 	getline(infile, author, ',');
@@ -20,14 +24,12 @@ bool FictionBook::setData(istream & infile){
 	return true;
 }
 
-bool FictionBook::setData(istream & infile){
-	infile >> this->author;
-	infile >> this->title;
-	infile >> this->year;
-}
-
 int FictionBook::hash() const{
 	return 'f' - 'a';
+}
+
+FictionBook* FictionBook::create() {
+    return new FictionBook();
 }
 
 bool FictionBook::operator<(const NodeData & right) const{

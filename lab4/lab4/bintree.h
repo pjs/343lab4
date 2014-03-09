@@ -58,7 +58,7 @@ private:
     void inorderHelper(Node*, ostream &) const;  // helper for operator<<
     void sideways(Node*, int) const;  // helper for displaySideways()
     void makeEmptyHelper(Node*);  // helper for makeEmpty()
-    Node* copyHelper(Node*);  // helper for copy constructor and operator=
+   // Node* copyHelper(Node*);  // helper for copy constructor and operator=
     bool equalHelper(Node*, Node*) const; // helper for operator==
     int heightHelper(Node*, const NodeData &) const;  // helper for getHeight()
     int getNodeHeight(Node*) const;   // helper for heightHelper()

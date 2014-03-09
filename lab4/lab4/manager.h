@@ -10,7 +10,9 @@
 
 #include <iostream>
 #include "userfactory.h"
+#include "itemfactory.h"
 #include "library.h"
+
 
 using namespace std;
 
@@ -25,10 +27,12 @@ public:
     
 private:
     void buildUsers(istream &);
+    void buildItems(istream &);
     
     Library library;
     
     UserFactory userFact;
+    ItemFactory itemFact;
     
     
     

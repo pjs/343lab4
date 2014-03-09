@@ -27,6 +27,10 @@ int Periodical::hash() const{
 	return 'p' - 'a';
 }
 
+Periodical* Periodical::create() {
+    return new Periodical();
+}
+
 bool Periodical::operator<(const NodeData & right) const{
 	const Periodical& book = static_cast<const Periodical&>(right);
 	if(this->month < book.month) return true;
@@ -59,6 +63,7 @@ bool Periodical::operator>=(const NodeData & right) const{
 bool Periodical::operator==(const NodeData & right) const{
 	const Periodical& book = static_cast<const Periodical&>(right);
 	if(this->month == book.month && this->year == book.year) return true;
+    return false;
 }
 
 bool Periodical::operator!=(const NodeData & right) const{

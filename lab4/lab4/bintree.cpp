@@ -14,7 +14,7 @@
 BinTree::BinTree() {
     root = NULL;
 }
-
+/*
 //-----------------------------------------------------------------------------
 // copy constructor
 
@@ -42,7 +42,7 @@ BinTree::Node* BinTree::copyHelper(Node* current) {
         
         return nodePtr;
     }
-}
+}*/
 
 //-----------------------------------------------------------------------------
 // destructor
@@ -84,7 +84,7 @@ void BinTree::makeEmptyHelper(Node* current) {
     }
 }
 
-//-----------------------------------------------------------------------------
+/*//-----------------------------------------------------------------------------
 // operator=
 
 BinTree& BinTree::operator=(const BinTree &right) {
@@ -98,7 +98,7 @@ BinTree& BinTree::operator=(const BinTree &right) {
     }
     
     return *this;
-}
+} */
 
 //-----------------------------------------------------------------------------
 // operator==
@@ -254,30 +254,6 @@ bool BinTree::retrieve(const NodeData &search, NodeData *&result) const {
 }
 
 //-----------------------------------------------------------------------------
-// displaySideways
-// Displays a binary tree as though you are viewing it from the side;
-// hard coded displaying to standard output.
-
-void BinTree::displaySideways() const {
-    sideways(root, 0);
-}
-
-void BinTree::sideways(Node* current, int level) const {
-    if (current != NULL) {
-        level++;
-        sideways(current->right, level);
-        
-        // indent for readability, 4 spaces per depth level
-        for(int i = level; i >= 0; i--) {
-            cout << "    ";
-        }
-        
-        cout << *current->data << endl;    // display information of object
-        sideways(current->left, level);
-    }
-}
-
-//-----------------------------------------------------------------------------
 // getHeight
 // finds the height of a node for a matching NodeData, returns zero if the
 // data is not found.
@@ -407,7 +383,7 @@ BinTree::Node* BinTree::toBSTreeHelper(NodeData* data[], int min, int max) {
     }
     
 }
-
+/*
 //-----------------------------------------------------------------------------
 // operator<<
 // displays tree in order to output stream
@@ -435,7 +411,7 @@ void BinTree::inorderHelper(Node* current, ostream &output) const {
         inorderHelper(current->right, output);  // walk right
     }
 }
-
+*/
 
 
 

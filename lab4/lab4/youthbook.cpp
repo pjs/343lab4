@@ -24,6 +24,11 @@ bool YouthBook::setData(istream & infile){
 	infile >> this->year;
 	return true;
 }
+
+YouthBook* YouthBook::create() {
+    return new YouthBook();
+}
+
 bool YouthBook::operator<(const NodeData & right ) const{
 	const YouthBook& book = static_cast<const YouthBook&>(right);
 	if(this->title < book.title) return true;
@@ -54,5 +59,5 @@ bool YouthBook::operator==(const NodeData & right ) const{
 	return false;
 }
 bool YouthBook::operator!=(const NodeData & right ) const{
-	return !(*this==right)
+	return !(*this==right);
 }

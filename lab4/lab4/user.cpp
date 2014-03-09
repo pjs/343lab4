@@ -34,7 +34,7 @@ User* User::create() {
 
 bool User::setData(istream &infile) {
     
-    infile >> number;
+    infile >> idNumber;
     infile >> firstName;
     infile >> lastName;
     
@@ -42,10 +42,33 @@ bool User::setData(istream &infile) {
 }
 
 bool User::operator==(const NodeData &right) const {
-	const User& user = static_cast<const User&>(right);
+	const User& rightUser = static_cast<const User&>(right);
     
-	if (number == user.number)
-        return true;
-    else
-        return false;
+	return (idNumber == rightUser.idNumber);
 }
+
+bool User::operator<(const NodeData & right) const{
+	const User& rightUser = static_cast<const User&>(right);
+    
+	return (idNumber < rightUser.idNumber);
+}
+bool User::operator>(const NodeData & right) const{
+	const User& rightUser = static_cast<const User&>(right);
+    
+	return (idNumber > rightUser.idNumber);
+}
+bool User::operator<=(const NodeData & right) const{
+	const User& rightUser = static_cast<const User&>(right);
+    
+	return (idNumber <= rightUser.idNumber);
+}
+bool User::operator>=(const NodeData & right) const{
+	const User& rightUser = static_cast<const User&>(right);
+    
+	return (idNumber >= rightUser.idNumber);
+}
+
+bool User::operator!=(const NodeData & right) const{
+	return !(*this==right);
+}
+

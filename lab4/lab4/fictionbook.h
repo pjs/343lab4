@@ -20,10 +20,12 @@ protected:
     
 public:
     FictionBook(string = "", string = "", int = 0);
+    virtual ~FictionBook();
     
 	virtual bool setData(istream &);
 
 	virtual int hash() const;
+    virtual FictionBook* create();
 
     virtual bool operator<(const NodeData &) const;
     virtual bool operator>(const NodeData &) const;

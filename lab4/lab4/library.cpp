@@ -7,6 +7,8 @@
 
 
 #include "library.h"
+#include "item.h"
+#include "user.h"
 
 //-----------------------------------------------------------------------------
 // constructor
@@ -26,5 +28,14 @@ Library::~Library() {
 // addUser
 
 void Library::addUser(User* userPtr) {
-    Users.insert(userPtr);
+    users.insert(userPtr);
+}
+
+//-----------------------------------------------------------------------------
+// addItem
+
+void Library::addItem(Item* itemPtr) {
+    int hash = itemPtr->hash();
+    
+    items[hash].insert(itemPtr);
 }

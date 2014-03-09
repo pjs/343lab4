@@ -24,6 +24,7 @@ protected:
 public:
     Item(string = "", int = 0);
   //  virtual ~Item();
+    virtual Item* create() = 0;
 };
 
 #endif

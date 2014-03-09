@@ -35,3 +35,31 @@ void Manager::buildUsers(istream& infile) {
         }
     }
 }
+
+//-----------------------------------------------------------------------------
+// buildItems
+
+void Manager::buildItems(istream& infile) {
+    
+    Item* ptr = NULL;       // temp pointer to hold new User
+    char temp;
+    bool successfulRead;    // read good data
+    for (;;) {
+        infile >> temp;
+        ptr = itemFact.createIt(temp);
+        successfulRead = ptr->setData(infile);
+        if (infile.eof()) {
+            delete ptr;
+            break;
+        }
+        
+        if (successfulRead) {
+            
+            // add user to library
+            //library.addUser(ptr);
+        }
+        else {
+            delete ptr;
+        }
+    }
+}

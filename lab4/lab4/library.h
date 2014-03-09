@@ -10,20 +10,24 @@
 
 #include <iostream>
 #include "bintree.h"
-#include "user.h"
 
 using namespace std;
+
+class Item;
+class User;
 
 class Library {
     
 public:
     Library();
     ~Library();
-    
+
     void addUser(User*);
+    void addItem(Item*);
     
 private:
-    BinTree Users;
+    BinTree users;
+    BinTree items[26];
     
 };
 
