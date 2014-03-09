@@ -10,7 +10,7 @@ using namespace std;
 class NodeData {
     
 public:
-    virtual ~NodeData() = 0;
+	virtual ~NodeData() { }
     virtual bool setData(istream &) = 0;
     virtual bool operator==(const NodeData &) const = 0;
     virtual bool operator!=(const NodeData &) const = 0;
