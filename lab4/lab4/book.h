@@ -20,6 +20,7 @@ protected:
     int year;
 	string author;
 
+
 public:
     Book(string = "", string = "", int = 0);
 

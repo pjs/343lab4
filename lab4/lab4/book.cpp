@@ -9,5 +9,6 @@
 
 Book::Book(string author, string title, int year):Item(title,5){
 	this->author = author;
+	this->title = title;
 	this->year = year;
 }

@@ -9,7 +9,7 @@
 
 #include "item.h"
 
-Item::Item(string title, int amount){
+Item::Item( int amount){
 	this->title = title;
 	this->amount = amount;
 }

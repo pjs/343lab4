@@ -10,6 +10,49 @@
 YouthBook::YouthBook(string author, string title, int year)
 	:Book(author, title, year){}
 
+
 int YouthBook::hash() const{
 	return 'y' - 'a';
+}
+
+bool YouthBook::setData(istream & infile){
+	infile.get();   
+	getline(infile, author, ',');
+	infile.get();   
+	getline(infile, title, ',');
+	infile.get();   
+	infile >> this->year;
+	return true;
+}
+bool YouthBook::operator<(const NodeData & right ) const{
+	const YouthBook& book = static_cast<const YouthBook&>(right);
+	if(this->title < book.title) return true;
+	if(this->author < book.author) return true;
+	return false;
+}
+bool YouthBook::operator<=(const NodeData & right ) const{
+	const YouthBook& book = static_cast<const YouthBook&>(right);
+	if(this->title <= book.title) return true;
+	if(this->author <= book.author) return true;
+	return false;
+}
+bool YouthBook::operator>(const NodeData & right ) const{
+	const YouthBook& book = static_cast<const YouthBook&>(right);
+	if(this->title > book.title) return true;
+	if(this->author > book.author) return true;
+	return false;
+}
+bool YouthBook::operator>=(const NodeData & right ) const{
+	const YouthBook& book = static_cast<const YouthBook&>(right);
+	if(this->title >= book.title) return true;
+	if(this->author >= book.author) return true;
+	return false;
+}
+bool YouthBook::operator==(const NodeData & right ) const{
+	const YouthBook& book = static_cast<const YouthBook&>(right);
+	if(this->title == book.title && this->author == book.author) return true;
+	return false;
+}
+bool YouthBook::operator!=(const NodeData & right ) const{
+	return !(*this==right)
 }

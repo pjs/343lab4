@@ -8,7 +8,6 @@
 #ifndef YOUTHBOOK_H
 #define YOUTHBOOK_H
 
-#include <iostream>
 #include "book.h"
 
 using namespace std;
@@ -21,11 +20,18 @@ protected:
 public:
     YouthBook(string = "", string = "", int = 0);
     
-    virtual int hash() const;
-    /*virtual bool operator<(const Item &) const;
-    virtual bool operator>(const Item &) const;
-    virtual bool operator<=(const Item &) const;
-    virtual bool operator>=(const Item &) const;*/
+	virtual bool setData(istream &);
+
+	virtual int hash() const;
+
+    virtual bool operator<(const NodeData &) const;
+    virtual bool operator>(const NodeData &) const;
+    virtual bool operator<=(const NodeData &) const;
+    virtual bool operator>=(const NodeData &) const;
+
+	
+	virtual bool operator==(const NodeData &) const;
+	virtual bool operator!=(const NodeData &) const;
 };
 
 #endif

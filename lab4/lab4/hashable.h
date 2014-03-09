@@ -12,7 +12,7 @@
 
 using namespace std;
 
-class Hashable {
+class Hashable{
     
 public:
     virtual int hash() const = 0; 
