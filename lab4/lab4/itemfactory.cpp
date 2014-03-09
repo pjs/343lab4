@@ -36,6 +36,8 @@ ItemFactory::~ItemFactory() {
 //-----------------------------------------------------------------------------
 // create
 
-Item* ItemFactory::createIt(char i) {
+Item* ItemFactory::createIt(char c) {
+    tolower(c);
+    int i = c - 'a';
     return objFactory[i]->create();
 }

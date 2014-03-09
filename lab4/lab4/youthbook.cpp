@@ -15,6 +15,10 @@ int YouthBook::hash() const{
 	return 'y' - 'a';
 }
 
+YouthBook::~YouthBook() {
+    
+}
+
 bool YouthBook::setData(istream & infile){
 	infile.get();   
 	getline(infile, author, ',');

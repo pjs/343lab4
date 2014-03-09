@@ -19,6 +19,7 @@ protected:
     
 public:
     YouthBook(string = "", string = "", int = 0);
+    virtual ~YouthBook();
     
 	virtual bool setData(istream &);
 

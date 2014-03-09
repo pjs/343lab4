@@ -17,7 +17,7 @@ class User : public NodeData {
 
 public:
     User();
-    ~User();
+    virtual ~User();
     
     User* create();
     virtual bool setData(istream &);
