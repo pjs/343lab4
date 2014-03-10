@@ -49,7 +49,7 @@ bool DisplayHistory::execute(Library &library) {
     if (success) {
         User& foundUser = static_cast<User&>(*nodePtr);
         
-        foundUser.displayHistory(); ?
+        foundUser.displayHistory();
     }
     
     return false;

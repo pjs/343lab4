@@ -1,16 +1,16 @@
 //
-// checkout.cpp
+// return.cpp
 //
 // Paul Simpson
 // Trevor Olson
 //
 
-#include "checkout.h"
+#include "return.h"
 
 //-----------------------------------------------------------------------------
 // constructor
 
-Checkout::Checkout() {
+Return::Return() {
     
 }
 
@@ -18,28 +18,28 @@ Checkout::Checkout() {
 //-----------------------------------------------------------------------------
 // destructor
 
-Checkout::~Checkout() {
+Return::~Return() {
 
 }
 
 //-----------------------------------------------------------------------------
 // hash
 
-int Checkout::hash() const {
-    return 'c' - 'a';
+int Return::hash() const {
+    return 'r' - 'a';
 }
 
 //-----------------------------------------------------------------------------
 // create
 
-Command* Checkout::create() {
-    return new Checkout();
+Command* Return::create() {
+    return new Return();
 }
 
 //-----------------------------------------------------------------------------
 // execute
 
-bool Checkout::execute(Library &library) {
+bool Return::execute(Library &library) {
     bool success;
     NodeData* nodePtr = NULL;
     
@@ -54,7 +54,7 @@ bool Checkout::execute(Library &library) {
     
     if (success) {
         Item& foundItem = static_cast<Item&>(*nodePtr);
-        success = foundItem.removeItem();
+        success = foundItem.addItem();
     }
     
     return success;
@@ -63,7 +63,7 @@ bool Checkout::execute(Library &library) {
 //-----------------------------------------------------------------------------
 // setData
 
-bool Checkout::setData(istream &data) {
+bool Return::setData(istream &data) {
     UserFactory userFact;
     ItemFactory itemFact;
     bool successfulRead;
@@ -91,7 +91,7 @@ bool Checkout::setData(istream &data) {
 
 //-----------------------------------------------------------------------------
 // print
-void Checkout::print() const{
-	cout << "CHECKOUT  " << *item;
+void Return::print() const{
+	cout << "Return  " << *item;
 }
 
