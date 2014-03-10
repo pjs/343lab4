@@ -11,7 +11,8 @@
 // constructor
 
 Checkout::Checkout() {
-    
+    user = NULL;
+    item = NULL;
 }
 
 
@@ -19,8 +20,11 @@ Checkout::Checkout() {
 // destructor
 
 Checkout::~Checkout() {
-	delete user;
-	delete item;
+    if (user != NULL)
+        delete user;
+    
+    if (item != NULL)
+        delete item;
 }
 
 //-----------------------------------------------------------------------------
