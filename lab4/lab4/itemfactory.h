@@ -18,7 +18,8 @@ class ItemFactory {
 public:
     ItemFactory();
     ~ItemFactory();
-    Item* createIt(char);
+    Item* createIt(int);
+    bool isValid(int) const;
     
 private:
     Item* objFactory[26];

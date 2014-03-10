@@ -27,7 +27,7 @@ bool FictionBook::setData(istream & infile){
 	getline(infile, title, ',');
 	infile.get();   
 	infile >> this->year;
-
+    infile.get();
 	return true;
 }
 

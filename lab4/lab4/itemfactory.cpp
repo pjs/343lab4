@@ -36,8 +36,19 @@ ItemFactory::~ItemFactory() {
 //-----------------------------------------------------------------------------
 // create
 
-Item* ItemFactory::createIt(char c) {
-    tolower(c);
+Item* ItemFactory::createIt(int c) {
+    c = tolower(c);
     int i = c - 'a';
+    
     return objFactory[i]->create();
+}
+
+//-----------------------------------------------------------------------------
+// isValid
+
+bool ItemFactory::isValid(int c) const {
+    c = tolower(c);
+    int i = c - 'a';
+    
+    return objFactory[i] != NULL;
 }

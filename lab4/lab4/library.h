@@ -26,6 +26,7 @@ public:
     void addItem(Item*);
     
 	void displayLibrary() const;
+    void displayUsers() const;
 
 private:
     BinTree users;

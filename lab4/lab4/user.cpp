@@ -23,6 +23,13 @@ User::~User() {
 }
 
 //-----------------------------------------------------------------------------
+// print
+
+void User::print() const {
+    cout << idNumber << " " << lastName << " " << firstName << endl;
+}
+
+//-----------------------------------------------------------------------------
 // create
 
 User* User::create() {
@@ -35,8 +42,8 @@ User* User::create() {
 bool User::setData(istream &infile) {
   
     infile >> idNumber;
-    infile >> firstName;
     infile >> lastName;
+    infile >> firstName;
     
     return true;
 }

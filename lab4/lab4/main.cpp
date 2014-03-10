@@ -14,7 +14,6 @@ int main()
     
     test.run();
     
-    cout << "testdfsdfs" << endl;
     
     return 0;
 

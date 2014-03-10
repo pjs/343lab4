@@ -19,7 +19,7 @@ public:
     User();
     virtual ~User();
     
-	virtual void print() const{}
+	virtual void print() const;
 
     User* create();
     virtual bool setData(istream &);

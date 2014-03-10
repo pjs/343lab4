@@ -30,6 +30,7 @@ bool Periodical::setData(istream & infile){
 	infile >> this->month;
 	infile.get();   
 	infile >> this->year;
+    infile.get();
 	return true;
 }
 int Periodical::hash() const{

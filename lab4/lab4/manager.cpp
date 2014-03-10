@@ -31,7 +31,6 @@ Manager::~Manager() {
 
 void Manager::run() {
     ifstream userFile("data4patrons.txt");
-    //istream& iUserFile = userFile;
     
     buildUsers(userFile);
 
@@ -40,7 +39,7 @@ void Manager::run() {
 	buildItems(itemFile);
 
 	library.displayLibrary();
-    cout << "test" << endl;
+    library.displayUsers();
   
 }
 
@@ -75,25 +74,32 @@ void Manager::buildUsers(istream& infile) {
 
 void Manager::buildItems(istream& infile) {
     
-    Item* ptr = NULL;       // temp pointer to hold new User
+    Item* ptr = NULL;       // temp pointer to hold new Item
     char temp;
     bool successfulRead;    // read good data
     for (;;) {
         infile >> temp;
-        ptr = itemFact.createIt(temp);
-        successfulRead = ptr->setData(infile);
-        if (infile.eof()) {
-            delete ptr;
-            break;
-        }
-        
-        if (successfulRead) {
+        if (itemFact.isValid(temp)) {
+            ptr = itemFact.createIt(temp);
             
-            // add user to library
-            //library.addUser(ptr);
+            successfulRead = ptr->setData(infile);
+            if (infile.eof()) {
+                delete ptr;
+                break;
+            }
+            
+            if (successfulRead) {
+                
+                // add item to library
+                library.addItem(ptr);
+            }
+            else {
+                delete ptr;
+            }
         }
         else {
-            delete ptr;
+            string k;
+            getline(infile, k);
         }
     }
 }
