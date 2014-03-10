@@ -5,24 +5,17 @@
 //  Trevor Olson
 //
 
-#include <iostream>
-#include "periodical.h"
-#include "fictionBook.h"
+#include "manager.h"
 
 int main()
 {
 
-    // insert code here...
-    std::cout << "Hello, World!\n";
-	//Periodical test("blah", 5, 12, 2013);
-
-	FictionBook test("author", "title", 2013);
-	FictionBook test2("a", "z", 2011);
-	bool testbool = test < test2;
-	cout << testbool;
-
-	int i;
-	cin >> i;
+    Manager test;
+    
+    test.run();
+    
+    cout << "testdfsdfs" << endl;
+    
     return 0;
 
 }

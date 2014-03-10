@@ -8,7 +8,35 @@
 
 #include "manager.h"
 #include "user.h"
+#include <fstream>
 
+using namespace std;
+
+//-----------------------------------------------------------------------------
+// constructor
+
+Manager::Manager() {
+    
+}
+
+//-----------------------------------------------------------------------------
+// destructor
+
+Manager::~Manager() {
+    
+}
+
+//-----------------------------------------------------------------------------
+// run
+
+void Manager::run() {
+    ifstream userFile("data4patrons.txt");
+    //istream& iUserFile = userFile;
+    
+    buildUsers(userFile);
+    cout << "test" << endl;
+  
+}
 
 //-----------------------------------------------------------------------------
 // buildUsers
