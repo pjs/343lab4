@@ -67,11 +67,11 @@ bool Checkout::setData(istream &data) {
     UserFactory userFact;
     ItemFactory itemFact;
     bool successfulRead;
+    char input;
     user = userFact.createIt(0);
     
     user->setDataCommand(data);
-
-    int input;
+    
     data >> input;
     
     if (itemFact.isValid(input)) {

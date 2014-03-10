@@ -35,11 +35,14 @@ bool Periodical::setData(istream & infile){
 }
 
 bool Periodical::setDataCommand(istream & infile){
-    int temp;
+    char temp;
     infile >> temp;
     
-    if (temp != 'H')
+    if (temp != 'H') {
+        string k;
+        getline(infile, k);
         return false;
+    }
     
     infile >> year;
     infile >> month;

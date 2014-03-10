@@ -49,6 +49,9 @@ Item* ItemFactory::createIt(int c) {
 bool ItemFactory::isValid(int c) const {
     c = tolower(c);
     int i = c - 'a';
-
-    return objFactory[i] != NULL;
+    
+    if (i >= 0 && i <= 26)
+        return objFactory[i] != NULL;
+    else
+        return false;
 }

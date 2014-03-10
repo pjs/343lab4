@@ -41,12 +41,11 @@ void Manager::run() {
     ifstream commandFile("data4commands.txt");
     
 	buildCommands(commandFile);
-
-	//library.displayLibrary();
-    //library.displayUsers();
     
     processCommands();
-  
+    
+    
+    library.displayLibrary();
 }
 
 //-----------------------------------------------------------------------------
@@ -104,10 +103,8 @@ void Manager::buildItems(istream& infile) {
             }
         }
         else {
-            if (infile.eof()) {
-                delete ptr;
+            if (infile.eof())
                 break;
-            }
             string k;
             getline(infile, k);
         }
@@ -126,7 +123,7 @@ void Manager::buildCommands(istream& infile) {
         infile >> temp;
         if (commandFact.isValid(temp)) {
             ptr = commandFact.createIt(temp);
-            
+
             successfulRead = ptr->setData(infile);
             if (infile.eof()) {
                 delete ptr;
@@ -141,10 +138,9 @@ void Manager::buildCommands(istream& infile) {
             }
         }
         else {
-            if (infile.eof()) {
-                delete ptr;
+            if (infile.eof())
                 break;
-            }
+            
             string k;
             getline(infile, k);
         }

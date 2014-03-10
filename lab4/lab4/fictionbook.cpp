@@ -32,11 +32,14 @@ bool FictionBook::setData(istream & infile){
 }
 
 bool FictionBook::setDataCommand(istream & infile){
-    int temp;
+    char temp;
     infile >> temp;
     
-    if (temp != 'H')
+    if (temp != 'H') {
+        string k;
+        getline(infile, k);
         return false;
+    }
     
 	infile.get();
 	getline(infile, author, ',');

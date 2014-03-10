@@ -36,11 +36,14 @@ bool YouthBook::setData(istream & infile){
 }
 
 bool YouthBook::setDataCommand(istream & infile){
-    int temp;
+    char temp;
     infile >> temp;
     
-    if (temp != 'H')
+    if (temp != 'H') {
+        string k;
+        getline(infile, k);
         return false;
+    }
     
 	infile.get();
 	getline(infile, title, ',');
