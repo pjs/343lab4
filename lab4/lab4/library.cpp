@@ -41,6 +41,22 @@ void Library::addItem(Item* itemPtr) {
 }
 
 //-----------------------------------------------------------------------------
+// findUser
+
+bool Library::findUser(const User &search, NodeData *&result) const {
+    return users.retrieve(search, result);
+}
+
+//-----------------------------------------------------------------------------
+// findItem
+
+bool Library::findItem(const Item &search, NodeData *&result) const {
+    int hash = search.hash();
+    
+    return items[hash].retrieve(search, result);
+}
+
+//-----------------------------------------------------------------------------
 //displayLibrary
 
 void Library::displayLibrary()const{

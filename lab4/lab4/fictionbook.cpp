@@ -31,6 +31,22 @@ bool FictionBook::setData(istream & infile){
 	return true;
 }
 
+bool FictionBook::setDataCommand(istream & infile){
+    int temp;
+    infile >> temp;
+    
+    if (temp != 'H')
+        return false;
+    
+	infile.get();
+	getline(infile, author, ',');
+	infile.get();
+	getline(infile, title, ',');
+	infile.get();
+    
+	return true;
+}
+
 int FictionBook::hash() const{
 	return 'f' - 'a';
 }

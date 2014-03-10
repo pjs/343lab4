@@ -25,6 +25,7 @@ public:
 	virtual void print() const;
     
 	virtual bool setData(istream &);
+    virtual bool setDataCommand(istream &);
 
 	virtual int hash() const;
     virtual YouthBook* create();

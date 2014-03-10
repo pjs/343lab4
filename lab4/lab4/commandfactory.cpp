@@ -8,6 +8,7 @@
 
 #include "commandfactory.h"
 #include "displaylibrary.h"
+#include "checkout.h"
 
 //-----------------------------------------------------------------------------
 // constructor
@@ -16,6 +17,7 @@ CommandFactory::CommandFactory() {
     for (int i = 0; i < 26; i++) {
         objFactory[i] = NULL;
     }
+    objFactory[2] = new Checkout();
     objFactory[3] = new DisplayLibrary();
 }
 

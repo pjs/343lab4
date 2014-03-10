@@ -25,13 +25,29 @@ void YouthBook::print() const {
 }
 
 bool YouthBook::setData(istream & infile){
-	infile.get();   
+	infile.get();
 	getline(infile, author, ',');
-	infile.get();   
+	infile.get();
 	getline(infile, title, ',');
-	infile.get();   
+	infile.get();
 	infile >> this->year;
     infile.get();
+	return true;
+}
+
+bool YouthBook::setDataCommand(istream & infile){
+    int temp;
+    infile >> temp;
+    
+    if (temp != 'H')
+        return false;
+    
+	infile.get();
+	getline(infile, title, ',');
+	infile.get();
+	getline(infile, author, ',');
+	infile.get();
+    
 	return true;
 }
 

@@ -17,6 +17,7 @@ public:
 	virtual ~NodeData() { }
 
     virtual bool setData(istream &) = 0;
+    virtual bool setDataCommand(istream &) = 0;
 
 	virtual void print() const = 0;
 

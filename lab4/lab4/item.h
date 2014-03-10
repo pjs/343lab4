@@ -15,7 +15,7 @@
 
 using namespace std;
 
-class Item : public Hashable,  public NodeData{
+class Item : public Hashable,  public NodeData {
 
 protected:
     string title;
@@ -25,6 +25,11 @@ public:
     Item(string = "", int = 0);
     virtual ~Item();
     virtual Item* create() = 0;
+    
+    bool addItem();
+    bool removeItem();
+    
+    
 };
 
 #endif

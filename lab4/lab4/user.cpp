@@ -79,3 +79,20 @@ bool User::operator!=(const NodeData & right) const{
 	return !(*this==right);
 }
 
+//-----------------------------------------------------------------------------
+// addHistory
+
+void User::addHistory(Command* current) {
+    history.push_back(current);
+}
+
+//-----------------------------------------------------------------------------
+// setDataCommand
+
+bool User::setDataCommand(istream &infile) {
+    
+    infile >> idNumber;
+    
+    return true;
+}
+

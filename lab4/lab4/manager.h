@@ -31,6 +31,7 @@ private:
     void buildUsers(istream &);
     void buildItems(istream &);
     void buildCommands(istream &);
+    void processCommands();
     
     Library library;
     queue <Command*> commands;

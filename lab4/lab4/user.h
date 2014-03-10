@@ -9,7 +9,9 @@
 #define USER_H
 
 #include <iostream>
+#include <vector>
 #include "nodedata.h"
+#include "command.h"
 
 using namespace std;
 
@@ -23,6 +25,8 @@ public:
 
     User* create();
     virtual bool setData(istream &);
+    virtual bool setDataCommand(istream &);
+    void addHistory(Command*);
     
     virtual bool operator==(const NodeData &) const;
     virtual bool operator!=(const NodeData &) const;
@@ -35,6 +39,7 @@ private:
     string firstName;
     string lastName;
     int idNumber;
+    vector<Command*> history;
 
 };
 

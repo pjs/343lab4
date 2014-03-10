@@ -18,3 +18,17 @@ Item::~Item() {
     
 }
 
+bool Item::addItem() {
+    amount++;
+    return true;
+}
+
+bool Item::removeItem() {
+    if (amount > 0) {
+        amount--;
+        return true;
+    }
+    else {
+        return false;
+    }
+}

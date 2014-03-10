@@ -33,6 +33,24 @@ bool Periodical::setData(istream & infile){
     infile.get();
 	return true;
 }
+
+bool Periodical::setDataCommand(istream & infile){
+    int temp;
+    infile >> temp;
+    
+    if (temp != 'H')
+        return false;
+    
+    infile >> year;
+    infile >> month;
+
+	infile.get();
+	getline(infile, title, ',');
+	infile.get();
+    
+	return true;
+}
+
 int Periodical::hash() const{
 	return 'p' - 'a';
 }

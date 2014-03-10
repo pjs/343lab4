@@ -42,8 +42,10 @@ void Manager::run() {
     
 	buildCommands(commandFile);
 
-	library.displayLibrary();
-    library.displayUsers();
+	//library.displayLibrary();
+    //library.displayUsers();
+    
+    processCommands();
   
 }
 
@@ -147,4 +149,25 @@ void Manager::buildCommands(istream& infile) {
             getline(infile, k);
         }
     }
+}
+
+//-----------------------------------------------------------------------------
+// processCommands
+
+void Manager::processCommands() {
+    Command* currentCommand = NULL;
+    bool result;
+    
+    while (!commands.empty()) {
+        
+        currentCommand = commands.front();
+        commands.pop();
+        
+        result = currentCommand->execute(library);
+        
+        //if (!result)
+         //   delete currentCommand;
+        
+    }
+    
 }

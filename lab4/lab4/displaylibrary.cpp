@@ -19,7 +19,7 @@ DisplayLibrary::DisplayLibrary() {
 // destructor
 
 DisplayLibrary::~DisplayLibrary() {
-    
+
 }
 
 //-----------------------------------------------------------------------------
@@ -39,8 +39,9 @@ Command* DisplayLibrary::create() {
 //-----------------------------------------------------------------------------
 // execute
 
-void DisplayLibrary::execute(Library library) {
+bool DisplayLibrary::execute(Library &library) {
     library.displayLibrary();
+    return false;
 }
 
 //-----------------------------------------------------------------------------

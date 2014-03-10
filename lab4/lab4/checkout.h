@@ -1,23 +1,25 @@
 //
-//  displaylibrary.h
+//  checkout.h
 //
 //  Paul Simpson
 //  Trevor Olson
 //
 
-#ifndef DISPLAYLIBRARY_H
-#define DISPLAYLIBRARY_H
+#ifndef CHECKOUT_H
+#define CHECKOUT_H
 
 #include <iostream>
 #include "command.h"
+#include "userfactory.h"
+#include "itemfactory.h"
 
 using namespace std;
 
-class DisplayLibrary : public Command {
+class Checkout : public Command {
 
 public:
-    DisplayLibrary();
-    virtual ~DisplayLibrary();
+    Checkout();
+    virtual ~Checkout();
 
       
     virtual int hash() const;
@@ -25,6 +27,10 @@ public:
     virtual bool execute(Library &);
     
     virtual bool setData(istream &);
+    
+private:
+    User* user;
+    Item* item;
 
 };
 
