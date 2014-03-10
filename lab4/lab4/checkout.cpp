@@ -19,7 +19,8 @@ Checkout::Checkout() {
 // destructor
 
 Checkout::~Checkout() {
-
+	delete user;
+	delete item;
 }
 
 //-----------------------------------------------------------------------------

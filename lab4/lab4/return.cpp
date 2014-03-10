@@ -19,7 +19,8 @@ Return::Return() {
 // destructor
 
 Return::~Return() {
-
+	delete user;
+	delete item;
 }
 
 //-----------------------------------------------------------------------------
