@@ -35,8 +35,12 @@ void Manager::run() {
     buildUsers(userFile);
 
 	ifstream itemFile("data4books.txt");
-
+    
 	buildItems(itemFile);
+    
+    ifstream commandFile("data4commands.txt");
+    
+	buildCommands(commandFile);
 
 	library.displayLibrary();
     library.displayUsers();
@@ -98,6 +102,47 @@ void Manager::buildItems(istream& infile) {
             }
         }
         else {
+            if (infile.eof()) {
+                delete ptr;
+                break;
+            }
+            string k;
+            getline(infile, k);
+        }
+    }
+}
+
+//-----------------------------------------------------------------------------
+// buildCommands
+
+void Manager::buildCommands(istream& infile) {
+    
+    Command* ptr = NULL;    // temp pointer to hold new Command
+    char temp;
+    bool successfulRead;    // read good data
+    for (;;) {
+        infile >> temp;
+        if (commandFact.isValid(temp)) {
+            ptr = commandFact.createIt(temp);
+            
+            successfulRead = ptr->setData(infile);
+            if (infile.eof()) {
+                delete ptr;
+                break;
+            }
+            if (successfulRead) {
+                
+                commands.push(ptr);
+            }
+            else {
+                delete ptr;
+            }
+        }
+        else {
+            if (infile.eof()) {
+                delete ptr;
+                break;
+            }
             string k;
             getline(infile, k);
         }

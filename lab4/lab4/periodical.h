@@ -20,7 +20,7 @@ protected:
     int year;
     
 public:
-    Periodical(string = "", int = 0, int = 0, int = 0);
+    Periodical(string = "", int = 5, int = 0, int = 0);
 	virtual ~Periodical();
     
 	virtual void print() const;

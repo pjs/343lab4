@@ -9,7 +9,7 @@
 #include "periodical.h"
 
 
-Periodical::Periodical(string title, int amout, int month, int year)
+Periodical::Periodical(string title, int amount, int month, int year)
 	:Item(title, amount){
 	
 	this->month = month;
