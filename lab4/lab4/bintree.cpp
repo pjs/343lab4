@@ -383,7 +383,7 @@ BinTree::Node* BinTree::toBSTreeHelper(NodeData* data[], int min, int max) {
     }
     
 }
-/*
+
 //-----------------------------------------------------------------------------
 // operator<<
 // displays tree in order to output stream
@@ -407,11 +407,11 @@ void BinTree::inorderHelper(Node* current, ostream &output) const {
     // walk until a leaf is found
     if (current != NULL) {
         inorderHelper(current->left, output);   // walk left
-        output << *current->data << " ";
+        output << *current->data;
         inorderHelper(current->right, output);  // walk right
     }
 }
-*/
+
 
 
 

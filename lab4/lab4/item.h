@@ -16,7 +16,7 @@
 using namespace std;
 
 class Item : public Hashable,  public NodeData{
-    
+
 protected:
     string title;
     int amount;

@@ -15,12 +15,15 @@ using namespace std;
 
 class FictionBook : public Book {
     
+
 protected:
 
     
 public:
     FictionBook(string = "", string = "", int = 0);
     virtual ~FictionBook();
+
+	virtual void print() const;
     
 	virtual bool setData(istream &);
 

@@ -13,6 +13,7 @@
 using namespace std;
 
 class YouthBook : public Book {
+
     
 protected:
 
@@ -20,6 +21,8 @@ protected:
 public:
     YouthBook(string = "", string = "", int = 0);
     virtual ~YouthBook();
+
+	virtual void print() const;
     
 	virtual bool setData(istream &);
 

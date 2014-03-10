@@ -8,6 +8,7 @@
 
 #include "periodical.h"
 
+
 Periodical::Periodical(string title, int amout, int month, int year)
 	:Item(title, amount){
 	
@@ -15,6 +16,14 @@ Periodical::Periodical(string title, int amout, int month, int year)
 	this->year = year;
 }
 
+Periodical::~Periodical(){
+	
+}
+
+void Periodical::print()const{
+	cout << setw(5) << amount << setw(4) << year << setw(2) << month
+		<< setw(30) << title << endl;
+}
 bool Periodical::setData(istream & infile){
 	infile.get();   
 	getline(infile, title, ',');

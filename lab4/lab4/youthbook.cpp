@@ -19,6 +19,11 @@ YouthBook::~YouthBook() {
     
 }
 
+void YouthBook::print() const {
+	cout << setw(5) << amount << setw(20) << author << setw(30) << title << 
+	setw(4) << year << endl;
+}
+
 bool YouthBook::setData(istream & infile){
 	infile.get();   
 	getline(infile, author, ',');

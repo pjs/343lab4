@@ -13,6 +13,7 @@
 using namespace std;
 
 class Periodical : public Item {
+
     
 protected:
     int month;
@@ -20,8 +21,10 @@ protected:
     
 public:
     Periodical(string = "", int = 0, int = 0, int = 0);
+	virtual ~Periodical();
     
-    
+	virtual void print() const;
+
 	virtual bool setData(istream &);
 
 	virtual int hash() const;

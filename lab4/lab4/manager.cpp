@@ -34,6 +34,12 @@ void Manager::run() {
     //istream& iUserFile = userFile;
     
     buildUsers(userFile);
+
+	ifstream itemFile("data4books.txt");
+
+	buildItems(itemFile);
+
+	library.displayLibrary();
     cout << "test" << endl;
   
 }

@@ -7,11 +7,17 @@
 
 #include "fictionBook.h"
 
+
 FictionBook::FictionBook(string author, string title, int year) : 
 	Book(author, title, year){}
 
 FictionBook::~FictionBook() {
     
+}
+
+void FictionBook::print() const{
+	cout << setw(5) << amount << setw(20) << author << setw(30) << title << 
+		setw(4) << year << endl;
 }
 
 bool FictionBook::setData(istream & infile){
@@ -21,6 +27,7 @@ bool FictionBook::setData(istream & infile){
 	getline(infile, title, ',');
 	infile.get();   
 	infile >> this->year;
+
 	return true;
 }
 

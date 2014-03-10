@@ -33,11 +33,11 @@ User* User::create() {
 // setData
 
 bool User::setData(istream &infile) {
-    /*
+  
     infile >> idNumber;
     infile >> firstName;
     infile >> lastName;
-    */
+    
     return true;
 }
 
