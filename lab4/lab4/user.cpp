@@ -87,6 +87,16 @@ void User::addHistory(Command* current) {
 }
 
 //-----------------------------------------------------------------------------
+// displayHistory
+void User::displayHistory() const{
+	for (vector<int>::iterator it = history.begin() ; 
+		it != history.end(); ++it){
+
+		cout << *it << endl;
+	}
+}
+
+//-----------------------------------------------------------------------------
 // setDataCommand
 
 bool User::setDataCommand(istream &infile) {

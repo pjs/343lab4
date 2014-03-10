@@ -26,7 +26,9 @@ public:
     User* create();
     virtual bool setData(istream &);
     virtual bool setDataCommand(istream &);
+
     void addHistory(Command*);
+	void displayHistory() const;
     
     virtual bool operator==(const NodeData &) const;
     virtual bool operator!=(const NodeData &) const;

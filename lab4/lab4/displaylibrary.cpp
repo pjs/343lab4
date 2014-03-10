@@ -52,4 +52,9 @@ bool DisplayLibrary::setData(istream &data) {
     return true;
 }
 
+//-----------------------------------------------------------------------------
+// print
+void DisplayLibrary::print()const{
+	cout << "diplay library command";
+}
 

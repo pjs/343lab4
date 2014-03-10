@@ -17,3 +17,7 @@ Command::~Command() {
     
 }
 
+ostream& operator<<(ostream & output, Command& data){
+	data.print();
+	return output;
+}

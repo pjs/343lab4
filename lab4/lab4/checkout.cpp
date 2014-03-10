@@ -89,4 +89,9 @@ bool Checkout::setData(istream &data) {
     }
 }
 
+//-----------------------------------------------------------------------------
+// print
+void Checkout::print() const{
+	cout << "CHECKOUT  " << *book;
+}
 

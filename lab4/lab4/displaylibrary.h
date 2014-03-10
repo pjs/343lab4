@@ -25,6 +25,8 @@ public:
     virtual bool execute(Library &);
     
     virtual bool setData(istream &);
+	
+	virtual void print() const;
 
 };
 

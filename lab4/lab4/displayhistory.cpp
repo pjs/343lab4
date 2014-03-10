@@ -49,7 +49,7 @@ bool DisplayHistory::execute(Library &library) {
     if (success) {
         User& foundUser = static_cast<User&>(*nodePtr);
         
-        // foundUser.displayHistory(); ?
+        foundUser.displayHistory(); ?
     }
     
     return false;
@@ -67,4 +67,7 @@ bool DisplayHistory::setData(istream &data) {
     return true;
 }
 
+void DisplayHistory::print() const{
+	cout << "history for user: " << *user;
+}
 
