@@ -8,6 +8,7 @@
 
 #include "commandfactory.h"
 #include "displaylibrary.h"
+#include "displayhistory.h"
 #include "checkout.h"
 
 //-----------------------------------------------------------------------------
@@ -19,6 +20,7 @@ CommandFactory::CommandFactory() {
     }
     objFactory[2] = new Checkout();
     objFactory[3] = new DisplayLibrary();
+    objFactory[7] = new DisplayHistory();
 }
 
 //-----------------------------------------------------------------------------
