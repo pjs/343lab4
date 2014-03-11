@@ -1,0 +1,10 @@
+return book logic checking (if has been checked out, etc)
+check memory leaks
+error messages
+fix print / formatting
+
+use const ints instead of hard coding (array size 26, etc)
+make displayLibrary not hard coded
+
+comment code
+make factories accept stream object

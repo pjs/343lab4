@@ -21,14 +21,8 @@ class Library {
 public:
     Library();
     ~Library();
-
-    void addUser(User*);
-    void addItem(Item*);
-    bool findUser(const User &, NodeData *&) const;
-    bool findItem(const Item &, NodeData *&) const;
     
-
-    void displayUsers() const;
+    void displayUsers() const; // remove later
     
     BinTree& getItems(int);
     BinTree& getUsers();

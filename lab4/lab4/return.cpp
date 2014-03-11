@@ -11,7 +11,8 @@
 // constructor
 
 Return::Return() {
-    
+    user = NULL;
+    item = NULL;
 }
 
 
@@ -19,8 +20,11 @@ Return::Return() {
 // destructor
 
 Return::~Return() {
-	delete user;
-	delete item;
+	if (user != NULL)
+        delete user;
+    
+    if (item != NULL)
+        delete item;
 }
 
 //-----------------------------------------------------------------------------
@@ -44,18 +48,24 @@ bool Return::execute(Library &library) {
     bool success;
     NodeData* nodePtr = NULL;
     
-    success = library.findUser(*user, nodePtr);
+    success = library.getUsers().retrieve(*user, nodePtr);
     
     if (success) {
         User& foundUser = static_cast<User&>(*nodePtr);
-        foundUser.addHistory(this);
-    }
-    
-    success = library.findItem(*item, nodePtr);
-    
-    if (success) {
-        Item& foundItem = static_cast<Item&>(*nodePtr);
-        success = foundItem.addItem();
+        
+        vector<Command*>& history = foundUser.getHistory();
+        
+        
+        int hash = item->hash();
+        
+        success = library.getItems(hash).retrieve(*item, nodePtr);
+        
+        if (success) {
+            Item& foundItem = static_cast<Item&>(*nodePtr);
+            success = foundItem.addItem();
+            history.push_back(this);
+        }
+        
     }
     
     return success;

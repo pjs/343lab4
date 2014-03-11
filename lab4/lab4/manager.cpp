@@ -64,7 +64,7 @@ void Manager::buildUsers(istream& infile) {
         if (successfulRead) {
             
             // add user to library
-            library.addUser(ptr);
+            library.getUsers().insert(ptr);
         }
         else {
             delete ptr;
@@ -92,9 +92,10 @@ void Manager::buildItems(istream& infile) {
             }
             
             if (successfulRead) {
+                int hash = ptr->hash();
                 
                 // add item to library
-                library.addItem(ptr);
+                library.getItems(hash).insert(ptr);
             }
             else {
                 delete ptr;

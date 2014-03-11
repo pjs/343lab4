@@ -56,16 +56,17 @@ bool Checkout::execute(Library &library) {
         
         vector<Command*>& history = foundUser.getHistory();
         
-        history.push_back(this);
-    }
-    
-    int hash = item->hash();
-    
-    success = library.getItems(hash).retrieve(*item, nodePtr);
-    
-    if (success) {
-        Item& foundItem = static_cast<Item&>(*nodePtr);
-        success = foundItem.removeItem();
+        
+        int hash = item->hash();
+        
+        success = library.getItems(hash).retrieve(*item, nodePtr);
+        
+        if (success) {
+            Item& foundItem = static_cast<Item&>(*nodePtr);
+            success = foundItem.removeItem();
+            history.push_back(this);
+        }
+        
     }
     
     return success;
