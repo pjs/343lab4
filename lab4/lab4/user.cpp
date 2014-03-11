@@ -19,7 +19,9 @@ User::User() {
 // destructor
 
 User::~User() {
-    
+  while(!history.empty()){
+	history.pop_back();
+  }
 }
 
 //-----------------------------------------------------------------------------

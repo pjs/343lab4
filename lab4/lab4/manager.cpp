@@ -23,7 +23,9 @@ Manager::Manager() {
 // destructor
 
 Manager::~Manager() {
-    
+    while(!commands.empty()){
+		commands.pop();
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -161,7 +163,7 @@ void Manager::processCommands() {
         result = currentCommand->execute(library);
         
         if (!result) {
-           // delete currentCommand;
+           delete currentCommand;
         }
         
     }

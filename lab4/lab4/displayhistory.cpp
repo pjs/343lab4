@@ -12,7 +12,7 @@
 // constructor
 
 DisplayHistory::DisplayHistory() {
-    
+    user = NULL;
 }
 
 
@@ -20,7 +20,8 @@ DisplayHistory::DisplayHistory() {
 // destructor
 
 DisplayHistory::~DisplayHistory() {
-
+	if(user!=NULL)
+		delete user;
 }
 
 //-----------------------------------------------------------------------------

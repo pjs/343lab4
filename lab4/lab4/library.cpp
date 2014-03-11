@@ -21,7 +21,11 @@ Library::Library() {
 // destructor
 
 Library::~Library() {
-
+	/*delete users;
+	for(int i; i<26; i++){
+		if(items[i]!=NULL)
+			delete items[i];
+	}*/
 }
 
 //-----------------------------------------------------------------------------
