@@ -87,3 +87,17 @@ void Library::displayUsers()const{
 	cout << users << endl;
     
 }
+
+//-----------------------------------------------------------------------------
+// getItems
+
+BinTree& Library::getItems(int i) {
+	return items[i];
+}
+
+//-----------------------------------------------------------------------------
+// getUsers
+
+BinTree& Library::getUsers() {
+	return users;
+}

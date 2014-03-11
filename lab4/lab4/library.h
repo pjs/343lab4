@@ -30,6 +30,9 @@ public:
     
 	void displayLibrary() const;
     void displayUsers() const;
+    
+    BinTree& getItems(int);
+    BinTree& getUsers();
 
 private:
     BinTree users;
