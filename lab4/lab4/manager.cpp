@@ -44,8 +44,6 @@ void Manager::run() {
     
     processCommands();
     
-    
-    library.displayLibrary();
 }
 
 //-----------------------------------------------------------------------------

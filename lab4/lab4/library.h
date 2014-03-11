@@ -27,8 +27,7 @@ public:
     bool findUser(const User &, NodeData *&) const;
     bool findItem(const Item &, NodeData *&) const;
     
-    
-	void displayLibrary() const;
+
     void displayUsers() const;
     
     BinTree& getItems(int);
