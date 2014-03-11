@@ -44,12 +44,16 @@ bool DisplayHistory::execute(Library &library) {
     bool success;
     NodeData* nodePtr = NULL;
     
-    success = library.findUser(*user, nodePtr);
+    success = library.getUsers().retrieve(*user, nodePtr);
     
     if (success) {
         User& foundUser = static_cast<User&>(*nodePtr);
         
-        foundUser.displayHistory();
+        vector<Command*> history = foundUser.getHistory();
+        
+        for (int i = 0; i < history.size(); i++) {
+            cout << *history[i] << endl;
+        }
     }
     
     return false;

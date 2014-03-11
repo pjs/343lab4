@@ -87,11 +87,10 @@ void User::addHistory(Command* current) {
 }
 
 //-----------------------------------------------------------------------------
-// displayHistory
-void User::displayHistory() const {
-    for (int i = 0; i < history.size(); i++) {
-        cout << *history[i] << endl;
-    }
+// getHistory
+
+vector<Command*> User::getHistory() {
+    return history;
 }
 
 //-----------------------------------------------------------------------------
