@@ -79,7 +79,6 @@ bool Return::execute(Library &library) {
 						if(theStack.empty()){
 							success = foundItem.addItem();
 							history.push_back(this);
-							return success = true;
 						}else{
 							cout << "invalid return!" << endl;
 							success = false;
