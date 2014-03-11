@@ -6,6 +6,8 @@
 //
 
 #include "return.h"
+#include <stack>
+#include "checkout.h"
 
 //-----------------------------------------------------------------------------
 // constructor
@@ -62,8 +64,26 @@ bool Return::execute(Library &library) {
         
         if (success) {
             Item& foundItem = static_cast<Item&>(*nodePtr);
-            success = foundItem.addItem();
-            history.push_back(this);
+            stack<Command*> theStack;
+
+			for(int i = history.size() ; i >= 0 ; i--){
+				
+				if(history[i]->hash() == 'r'){
+					Return* retCommand = static_cast<Return*>(history[i]);
+					if(*retCommand->item == foundItem)
+						theStack.push(retCommand);
+				}
+				else if(history[i]->hash() == 'c'){
+					Checkout* command = static_cast<Checkout*>(history[i]);
+					if(*command->item == foundItem)
+						if(theStack.pop()==NULL){
+							success = foundItem.addItem();
+							history.push_back(this);
+						}else{
+							success = false;
+						}
+				}
+			}
         }
         
     }
