@@ -18,7 +18,7 @@ Item::~Item() {
     
 }
 
-bool Item::addItem() {
+bool Item::addItem() {	
     amount++;
     return true;
 }

@@ -47,7 +47,7 @@ Command* Return::create() {
 // execute
 
 bool Return::execute(Library &library) {
-    bool success;
+    bool success = false;
     NodeData* nodePtr = NULL;
     
     success = library.getUsers().retrieve(*user, nodePtr);
@@ -66,20 +66,22 @@ bool Return::execute(Library &library) {
             Item& foundItem = static_cast<Item&>(*nodePtr);
             stack<Command*> theStack;
 
-			for(int i = history.size() ; i >= 0 ; i--){
+			for(int i = history.size()-1 ; i >= 0 ; i--){
 				
-				if(history[i]->hash() == 'r'){
+				if(history[i]->hash() == 'r' - 'a'){
 					Return* retCommand = static_cast<Return*>(history[i]);
-					if(*retCommand->item == foundItem)
+					if(*retCommand->getItem() == foundItem)
 						theStack.push(retCommand);
 				}
-				else if(history[i]->hash() == 'c'){
+				else if(history[i]->hash() == 'c' - 'a'){
 					Checkout* command = static_cast<Checkout*>(history[i]);
-					if(*command->item == foundItem)
-						if(theStack.pop()==NULL){
+					if(*command->getItem() == foundItem)
+						if(theStack.empty()){
 							success = foundItem.addItem();
 							history.push_back(this);
+							return success = true;
 						}else{
+							cout << "invalid return!" << endl;
 							success = false;
 						}
 				}
@@ -87,7 +89,6 @@ bool Return::execute(Library &library) {
         }
         
     }
-    
     return success;
 }
 
@@ -126,3 +127,8 @@ void Return::print() const{
 	cout << "Return  " << *item;
 }
 
+//-----------------------------------------------------------------------------
+// getItem
+Item* Return::getItem() const{
+	return item;
+}

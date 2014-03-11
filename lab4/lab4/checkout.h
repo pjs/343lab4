@@ -29,6 +29,8 @@ public:
     virtual bool setData(istream &);
 
 	virtual void print() const;
+	
+	Item* getItem() const;
     
 private:
     User* user;

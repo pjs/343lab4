@@ -107,3 +107,8 @@ void Checkout::print() const{
 	cout << "CHECKOUT  " << *item;
 }
 
+//-----------------------------------------------------------------------------
+// getItem
+Item* Checkout::getItem() const{
+	return item;
+}
