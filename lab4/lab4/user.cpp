@@ -89,7 +89,7 @@ void User::addHistory(Command* current) {
 //-----------------------------------------------------------------------------
 // getHistory
 
-vector<Command*> User::getHistory() {
+vector<Command*>& User::getHistory() {
     return history;
 }
 

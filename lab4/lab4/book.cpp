@@ -7,7 +7,9 @@
 
 #include "book.h"
 
-Book::Book(string author, string title, int year):Item(title,5){
+Book::Book(string author, string title, int year) :
+        Item() {
+    
 	this->author = author;
 	this->title = title;
 	this->year = year;

@@ -159,8 +159,9 @@ void Manager::processCommands() {
         
         result = currentCommand->execute(library);
         
-        //if (!result)
-         //   delete currentCommand;
+        if (!result) {
+           // delete currentCommand;
+        }
         
     }
     

@@ -21,6 +21,7 @@ void FictionBook::print() const{
 }
 
 bool FictionBook::setData(istream & infile){
+    amount = AMOUNT;
 	infile.get();   
 	getline(infile, author, ',');
 	infile.get();   

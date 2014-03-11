@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
 #include "nodedata.h"
 #include "command.h"
 
@@ -28,7 +29,7 @@ public:
     virtual bool setDataCommand(istream &);
 
     void addHistory(Command*);
-	vector<Command*> getHistory();
+	vector<Command*>& getHistory();
     
     virtual bool operator==(const NodeData &) const;
     virtual bool operator!=(const NodeData &) const;

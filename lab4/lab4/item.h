@@ -29,6 +29,7 @@ public:
     bool addItem();
     bool removeItem();
     
+    const static int AMOUNT = 5;
     
 };
 

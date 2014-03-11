@@ -25,6 +25,7 @@ void YouthBook::print() const {
 }
 
 bool YouthBook::setData(istream & infile){
+    amount = AMOUNT;
 	infile.get();
 	getline(infile, author, ',');
 	infile.get();

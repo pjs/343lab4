@@ -45,17 +45,23 @@ Command* Checkout::create() {
 // execute
 
 bool Checkout::execute(Library &library) {
+    
     bool success;
     NodeData* nodePtr = NULL;
     
-    success = library.findUser(*user, nodePtr);
+    success = library.getUsers().retrieve(*user, nodePtr);
     
     if (success) {
         User& foundUser = static_cast<User&>(*nodePtr);
-        foundUser.addHistory(this);
+        
+        vector<Command*>& history = foundUser.getHistory();
+        
+        history.push_back(this);
     }
     
-    success = library.findItem(*item, nodePtr);
+    int hash = item->hash();
+    
+    success = library.getItems(hash).retrieve(*item, nodePtr);
     
     if (success) {
         Item& foundItem = static_cast<Item&>(*nodePtr);

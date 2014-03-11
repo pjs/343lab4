@@ -10,7 +10,7 @@
 
 
 Periodical::Periodical(string title, int amount, int month, int year)
-	:Item(title, amount){
+	:Item(){
 	
 	this->month = month;
 	this->year = year;
@@ -25,6 +25,7 @@ void Periodical::print()const{
 		<< setw(30) << title << endl;
 }
 bool Periodical::setData(istream & infile){
+    amount = AMOUNT;
 	infile.get();   
 	getline(infile, title, ',');
 	infile >> this->month;
