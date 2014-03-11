@@ -5,7 +5,7 @@
 // Trevor Olson
 //
 
-#include "fictionBook.h"
+#include "fictionbook.h"
 
 
 FictionBook::FictionBook(string author, string title, int year) : 
@@ -93,3 +93,4 @@ bool FictionBook::operator==(const NodeData & right) const{
 bool FictionBook::operator!=(const NodeData & right) const{
 	return !(*this==right);
 }
+

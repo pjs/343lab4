@@ -14,3 +14,4 @@ Book::Book(string author, string title, int year) :
 	this->title = title;
 	this->year = year;
 }
+

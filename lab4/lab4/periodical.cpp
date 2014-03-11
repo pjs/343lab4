@@ -101,3 +101,4 @@ bool Periodical::operator==(const NodeData & right) const{
 bool Periodical::operator!=(const NodeData & right) const{
 	return !(*this==right);
 }
+

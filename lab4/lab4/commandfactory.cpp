@@ -57,3 +57,4 @@ bool CommandFactory::isValid(int c) const {
     else
         return false;
 }
+

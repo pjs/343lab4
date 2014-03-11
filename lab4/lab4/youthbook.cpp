@@ -5,7 +5,7 @@
 //  Trevor Olson
 //
 
-#include "youthBook.h"
+#include "youthbook.h"
 
 YouthBook::YouthBook(string author, string title, int year)
 	:Book(author, title, year){}
@@ -91,3 +91,4 @@ bool YouthBook::operator==(const NodeData & right ) const{
 bool YouthBook::operator!=(const NodeData & right ) const{
 	return !(*this==right);
 }
+

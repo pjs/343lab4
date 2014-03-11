@@ -31,3 +31,4 @@ UserFactory::~UserFactory() {
 User* UserFactory::createIt(int i) {
     return objFactory[i]->create();
 }
+

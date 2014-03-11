@@ -112,3 +112,5 @@ void Checkout::print() const{
 Item* Checkout::getItem() const{
 	return item;
 }
+
+
