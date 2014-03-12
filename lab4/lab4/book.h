@@ -13,6 +13,8 @@
 
 using namespace std;
 
+const static int AUTHOR_OUTPUT_WIDTH = 20;
+
 class Book : public Item {
     
 protected:

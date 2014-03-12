@@ -17,10 +17,12 @@ public:
 	virtual ~NodeData() { }
 
     virtual bool setData(istream &) = 0;
-    virtual bool setDataCommand(istream &) = 0;
+    virtual bool setDataPartial(istream &) = 0;
 
-	virtual void print() const = 0;
     virtual void printHeader() const = 0;
+
+	virtual void print(bool) const = 0;
+
 
     virtual bool operator==(const NodeData &) const = 0;
     virtual bool operator!=(const NodeData &) const = 0;

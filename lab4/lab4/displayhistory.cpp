@@ -57,7 +57,8 @@ bool DisplayHistory::execute(Library &library) {
         }
     }
     else {
-        cout << "ERROR: user " << user->getIdNumber();
+        cout << "ERROR: user ";
+		user->print(true);
         cout << " not found in library" << endl;
     }
     
@@ -71,7 +72,7 @@ bool DisplayHistory::setData(istream &data) {
     UserFactory userFact;
     user = userFact.createIt(0);
     
-    user->setDataCommand(data);
+    user->setDataPartial(data);
     
     return true;
 }

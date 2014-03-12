@@ -22,11 +22,14 @@ public:
     YouthBook(string = "", string = "", int = 0);
     virtual ~YouthBook();
 
-	virtual void print() const;
+
     virtual void printHeader() const;
+
+	virtual void print(bool) const;
+
     
 	virtual bool setData(istream &);
-    virtual bool setDataCommand(istream &);
+    virtual bool setDataPartial(istream &);
 
 	virtual int hash() const;
     virtual YouthBook* create();
