@@ -32,9 +32,7 @@ public:
     virtual bool setData(istream &);
     virtual bool setDataPartial(istream &);
 
-    void addHistory(Command*); //remove
 	vector<Command*>& getHistory();
-    int getIdNumber(); //remove
     
     virtual bool operator==(const NodeData &) const;
     virtual bool operator!=(const NodeData &) const;

@@ -92,24 +92,10 @@ bool User::operator!=(const NodeData & right) const{
 }
 
 //-----------------------------------------------------------------------------
-// addHistory
-
-void User::addHistory(Command* current) {
-    history.push_back(current);
-}
-
-//-----------------------------------------------------------------------------
 // getHistory
 
 vector<Command*>& User::getHistory() {
     return history;
-}
-
-//-----------------------------------------------------------------------------
-// getIdNumber
-
-int User::getIdNumber() {
-    return idNumber;
 }
 
 //-----------------------------------------------------------------------------

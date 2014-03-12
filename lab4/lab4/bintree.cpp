@@ -14,35 +14,6 @@
 BinTree::BinTree() {
     root = NULL;
 }
-/*
-//-----------------------------------------------------------------------------
-// copy constructor
-
-BinTree::BinTree(const BinTree &c) {
-    root = copyHelper(c.root);
-}
-
-//-----------------------------------------------------------------------------
-// copyHelper
-// helper function for copy constructor and operator=
-
-BinTree::Node* BinTree::copyHelper(Node* current) {
-    
-    // walk until a leaf is reached
-    if (current == NULL)
-        return NULL;
-    else {
-        
-        // build new node and copy data
-        Node* nodePtr = new Node;
-        nodePtr->data = new NodeData(*current->data);
-        
-        nodePtr->left = copyHelper(current->left);     // walk left
-        nodePtr->right = copyHelper(current->right);   // walk right
-        
-        return nodePtr;
-    }
-}*/
 
 //-----------------------------------------------------------------------------
 // destructor
@@ -83,22 +54,6 @@ void BinTree::makeEmptyHelper(Node* current) {
         delete current;
     }
 }
-
-/*//-----------------------------------------------------------------------------
-// operator=
-
-BinTree& BinTree::operator=(const BinTree &right) {
-    
-    // check for self assignment
-    if (&right != this) {
-        
-        // delete the current data, copy over whatever is on the right
-        makeEmpty();
-        root = copyHelper(right.root);
-    }
-    
-    return *this;
-} */
 
 //-----------------------------------------------------------------------------
 // operator==

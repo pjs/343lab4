@@ -21,7 +21,8 @@ public:
     User* createIt(int);
     
 private:
-    User* objFactory[1];
+    static const int FACTORY_SIZE = 1;
+    User* objFactory[FACTORY_SIZE];
 };
 
 #endif

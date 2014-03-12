@@ -22,8 +22,6 @@ public:
     Library();
     ~Library();
     
-    void displayUsers() const; // remove later
-    
     BinTree& getItems(int);
     BinTree& getUsers();
 

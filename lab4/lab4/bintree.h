@@ -29,12 +29,10 @@ class BinTree {
     
 public:
     BinTree();                    // constructor
-    BinTree(const BinTree &);     // copy constructor
     ~BinTree();                   // destructor, calls makeEmpty
     bool isEmpty() const;         // true if tree is empty, otherwise false
     void makeEmpty();             // make the tree empty
     
-    BinTree& operator=(const BinTree &);     // assignment operator
     bool operator==(const BinTree &) const;  // equal data and structure
     bool operator!=(const BinTree &) const;  // opposite of operator==
     
@@ -59,7 +57,6 @@ private:
     void inorderHelper(Node*, ostream &) const;  // helper for operator<<
     void sideways(Node*, int) const;  // helper for displaySideways()
     void makeEmptyHelper(Node*);  // helper for makeEmpty()
-   // Node* copyHelper(Node*);  // helper for copy constructor and operator=
     bool equalHelper(Node*, Node*) const; // helper for operator==
     int heightHelper(Node*, const NodeData &) const;  // helper for getHeight()
     int getNodeHeight(Node*) const;   // helper for heightHelper()
