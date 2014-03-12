@@ -14,7 +14,7 @@
 using namespace std;
 
 class ItemFactory {
-    
+
 public:
     ItemFactory();
     ~ItemFactory();

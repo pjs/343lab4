@@ -57,7 +57,7 @@ bool DisplayHistory::execute(Library &library) {
         }
     }
     else {
-        cout << "ERROR: user ";
+		cout << "ERROR: user ";
 		user->print(true);
         cout << " not found in library" << endl;
     }

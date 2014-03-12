@@ -109,14 +109,15 @@ bool Return::execute(Library &library) {
 			}
         }
         else {
-            cout << "ERROR: item ";
+            cout << "ERROR: item" << endl;
             item->print(true);
-            cout << " not found in library" << endl;
+            cout << "not found in library" << endl;
         }
         
     }
     else {
-        cout << "ERROR: user " << user->getIdNumber();
+        cout << "ERROR: user ";
+		user->print(true);
         cout << " not found in library" << endl;
     }
     
