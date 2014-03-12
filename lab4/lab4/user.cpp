@@ -96,6 +96,13 @@ vector<Command*>& User::getHistory() {
 }
 
 //-----------------------------------------------------------------------------
+// getIdNumber
+
+int User::getIdNumber() {
+    return idNumber;
+}
+
+//-----------------------------------------------------------------------------
 // setDataCommand
 
 bool User::setDataCommand(istream &infile) {

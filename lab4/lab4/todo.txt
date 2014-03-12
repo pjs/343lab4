@@ -1,5 +1,5 @@
-return book logic checking (if has been checked out, etc)
-check memory leaks
+//return book logic checking (if has been checked out, etc)
+//check memory leaks
 error messages
 fix print / formatting
 
@@ -8,3 +8,12 @@ make displayLibrary not hard coded
 
 comment code
 make factories accept stream object
+
+
+
+
+error message:
+    //check invalid user id
+    //invalid item
+    //invalid patron
+    incorrect command

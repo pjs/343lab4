@@ -30,6 +30,7 @@ public:
 
     void addHistory(Command*); //remove
 	vector<Command*>& getHistory();
+    int getIdNumber();
     
     virtual bool operator==(const NodeData &) const;
     virtual bool operator!=(const NodeData &) const;

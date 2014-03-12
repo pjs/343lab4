@@ -110,6 +110,8 @@ void Manager::buildItems(istream& infile) {
         else {
             if (infile.eof())
                 break;
+            
+            cout << "ERROR: " << temp << " is not a valid item code" << endl;
             string k;
             getline(infile, k);
         }
@@ -145,6 +147,8 @@ void Manager::buildCommands(istream& infile) {
         else {
             if (infile.eof())
                 break;
+            
+            cout << "ERROR: " << temp << " is not a valid action code" << endl;
             
             string k;
             getline(infile, k);

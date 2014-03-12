@@ -66,8 +66,19 @@ bool Checkout::execute(Library &library) {
             success = foundItem.removeItem();
             if(success) 
 				history.push_back(this);
+            else
+                cout << "ERROR: no items available for checkout" << endl;
+        }
+        else {
+            cout << "ERROR: item ";
+            item->print();
+            cout << " not found in library" << endl;
         }
         
+    }
+    else {
+        cout << "ERROR: user " << user->getIdNumber();
+        cout << " not found in library" << endl;
     }
     
     return success;

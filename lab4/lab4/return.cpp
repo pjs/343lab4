@@ -59,6 +59,8 @@ bool Return::execute(Library &library) {
         
 		if(history.empty()){
 			success = false;
+            cout << "ERROR: item hasn't been checked out,";
+            cout << " can't return" << endl;
 			return success;
 		}
         
@@ -70,7 +72,7 @@ bool Return::execute(Library &library) {
             Item& foundItem = static_cast<Item&>(*nodePtr);
             stack<Command*> theStack;
 
-			for(int i = history.size()-1 ; i >= 0 ; i--){
+			for(int i = history.size() - 1 ; i >= 0 ; i--){
 				
 				if(history[i]->hash() == 'r' - 'a'){
 					Return* retCommand = static_cast<Return*>(history[i]);
@@ -92,12 +94,24 @@ bool Return::execute(Library &library) {
 				success = foundItem.addItem();
 				history.push_back(this);
 			}else{
-				cout << "invalid return!!" << endl;
+				cout << "ERROR: item hasn't been checked out,";
+                cout << " can't return" << endl;
 				success = false;
 			}
         }
+        else {
+            cout << "ERROR: item ";
+            item->print();
+            cout << " not found in library" << endl;
+        }
         
     }
+    else {
+        cout << "ERROR: user " << user->getIdNumber();
+        cout << " not found in library" << endl;
+    }
+    
+    
     return success;
 }
 
