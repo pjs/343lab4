@@ -198,7 +198,6 @@ bool BinTree::insert(NodeData* dataPtr) {
                 }
             }
             else {
-                
                 // don't insert duplicate
                 return false;
             }

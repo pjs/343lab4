@@ -28,7 +28,7 @@ public:
     virtual bool setData(istream &);
     virtual bool setDataCommand(istream &);
 
-    void addHistory(Command*);
+    void addHistory(Command*); //remove
 	vector<Command*>& getHistory();
     
     virtual bool operator==(const NodeData &) const;

@@ -57,6 +57,10 @@ bool Return::execute(Library &library) {
         
         vector<Command*>& history = foundUser.getHistory();
         
+		if(history.empty()){
+			success = false;
+			return success;
+		}
         
         int hash = item->hash();
         
@@ -70,20 +74,26 @@ bool Return::execute(Library &library) {
 				
 				if(history[i]->hash() == 'r' - 'a'){
 					Return* retCommand = static_cast<Return*>(history[i]);
-					if(*retCommand->getItem() == foundItem)
+					if(*retCommand->getItem() == foundItem){
 						theStack.push(retCommand);
+						cout << "retCommand: " << endl;
+						retCommand->print();
+					}
 				}
 				else if(history[i]->hash() == 'c' - 'a'){
 					Checkout* command = static_cast<Checkout*>(history[i]);
 					if(*command->getItem() == foundItem)
-						if(theStack.empty()){
-							success = foundItem.addItem();
-							history.push_back(this);
-						}else{
-							cout << "invalid return!" << endl;
-							success = false;
+						if(!theStack.empty()){
+							theStack.pop();
 						}
 				}
+			}
+			if(theStack.empty()){
+				success = foundItem.addItem();
+				history.push_back(this);
+			}else{
+				cout << "invalid return!!" << endl;
+				success = false;
 			}
         }
         

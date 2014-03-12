@@ -64,7 +64,8 @@ bool Checkout::execute(Library &library) {
         if (success) {
             Item& foundItem = static_cast<Item&>(*nodePtr);
             success = foundItem.removeItem();
-            history.push_back(this);
+            if(success) 
+				history.push_back(this);
         }
         
     }
