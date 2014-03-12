@@ -15,7 +15,7 @@
 // constructor
 
 ItemFactory::ItemFactory() {
-    for (int i = 0; i < 26; i++) {
+    for (int i = 0; i < FACTORY_SIZE; i++) {
         objFactory[i] = NULL;
     }
     objFactory[24] = new YouthBook();
@@ -27,7 +27,7 @@ ItemFactory::ItemFactory() {
 // destructor
 
 ItemFactory::~ItemFactory() {
-    for (int i = 0; i < 26; i++) {
+    for (int i = 0; i < FACTORY_SIZE; i++) {
         delete objFactory[i];
         objFactory[i] = NULL;
     }

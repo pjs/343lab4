@@ -28,8 +28,10 @@ public:
     BinTree& getUsers();
 
 private:
+    static const int FACTORY_SIZE = 26;
     BinTree users;
-    BinTree items[26];
+    BinTree items[FACTORY_SIZE];
+    
     
 };
 

@@ -22,7 +22,8 @@ public:
     bool isValid(int) const;
     
 private:
-    Item* objFactory[26];
+    static const int FACTORY_SIZE = 26;
+    Item* objFactory[FACTORY_SIZE];
 };
 
 #endif

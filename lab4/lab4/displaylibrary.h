@@ -27,6 +27,9 @@ public:
     virtual bool setData(istream &);
 	
 	virtual void print() const;
+    
+private:
+    static const int FACTORY_SIZE = 26;
 
 };
 

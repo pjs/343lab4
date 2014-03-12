@@ -16,7 +16,7 @@
 // constructor
 
 CommandFactory::CommandFactory() {
-    for (int i = 0; i < 26; i++) {
+    for (int i = 0; i < FACTORY_SIZE; i++) {
         objFactory[i] = NULL;
     }
     objFactory[2] = new Checkout();
@@ -29,7 +29,7 @@ CommandFactory::CommandFactory() {
 // destructor
 
 CommandFactory::~CommandFactory() {
-    for (int i = 0; i < 26; i++) {
+    for (int i = 0; i < FACTORY_SIZE; i++) {
         delete objFactory[i];
         objFactory[i] = NULL;
     }
@@ -52,7 +52,7 @@ bool CommandFactory::isValid(int c) const {
     c = tolower(c);
     int i = c - 'a';
     
-    if (i >= 0 && i <= 26)
+    if (i >= 0 && i <= FACTORY_SIZE)
         return objFactory[i] != NULL;
     else
         return false;

@@ -7,6 +7,7 @@
 
 #include "displaylibrary.h"
 
+
 //-----------------------------------------------------------------------------
 // constructor
 
@@ -40,7 +41,7 @@ Command* DisplayLibrary::create() {
 // execute
 
 bool DisplayLibrary::execute(Library &library) {
-    for (int i = 0; i < 26; i++) {
+    for (int i = 0; i < FACTORY_SIZE; i++) {
         if (!library.getItems(i).isEmpty()) {
             library.getItems(i).getRoot()->printHeader();
             
