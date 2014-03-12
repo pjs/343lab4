@@ -12,9 +12,11 @@
 
 using namespace std;
 
+const static int MO_OUTPUT_WIDTH = 3; 
+
 class Periodical : public Item {
 
-    
+ 
 protected:
     int month;
     int year;
@@ -23,10 +25,10 @@ public:
     Periodical(string = "", int = 5, int = 0, int = 0);
 	virtual ~Periodical();
     
-	virtual void print() const;
+	virtual void print(bool) const;
 
 	virtual bool setData(istream &);
-    virtual bool setDataCommand(istream &);
+    virtual bool setDataPartial(istream &);
 
 	virtual int hash() const;
     virtual Periodical* create();

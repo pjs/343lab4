@@ -15,6 +15,11 @@
 
 using namespace std;
 
+const static int TITLE_OUTPUT_WIDTH = 35;
+const static int AVAIL_OUTPUT_WIDTH = 6;
+const static int YEAR_OUTPUT_WIDTH = 4; 
+const static int AMOUNT = 5;
+
 class Item : public Hashable,  public NodeData {
 
 protected:
@@ -29,7 +34,7 @@ public:
     bool addItem();
     bool removeItem();
     
-    const static int AMOUNT = 5;
+    
     
 };
 

@@ -71,7 +71,7 @@ bool Checkout::execute(Library &library) {
         }
         else {
             cout << "ERROR: item ";
-            item->print();
+            item->print(true);
             cout << " not found in library" << endl;
         }
         
@@ -94,14 +94,14 @@ bool Checkout::setData(istream &data) {
     char input;
     user = userFact.createIt(0);
     
-    user->setDataCommand(data);
+    user->setDataPartial(data);
     
     data >> input;
     
     if (itemFact.isValid(input)) {
         item = itemFact.createIt(input);
         
-        successfulRead = item->setDataCommand(data);
+        successfulRead = item->setDataPartial(data);
         
         return successfulRead;
     }
@@ -116,7 +116,8 @@ bool Checkout::setData(istream &data) {
 //-----------------------------------------------------------------------------
 // print
 void Checkout::print() const{
-	cout << "CHECKOUT  " << *item;
+	cout << "CHECKOUT  ";
+	item->print(true);
 }
 
 //-----------------------------------------------------------------------------

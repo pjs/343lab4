@@ -101,7 +101,7 @@ bool Return::execute(Library &library) {
         }
         else {
             cout << "ERROR: item ";
-            item->print();
+            item->print(true);
             cout << " not found in library" << endl;
         }
         
@@ -125,14 +125,14 @@ bool Return::setData(istream &data) {
     char input;
     user = userFact.createIt(0);
     
-    user->setDataCommand(data);
+    user->setDataPartial(data);
     
     data >> input;
     
     if (itemFact.isValid(input)) {
         item = itemFact.createIt(input);
         
-        successfulRead = item->setDataCommand(data);
+        successfulRead = item->setDataPartial(data);
         
         return successfulRead;
     }
@@ -147,7 +147,8 @@ bool Return::setData(istream &data) {
 //-----------------------------------------------------------------------------
 // print
 void Return::print() const{
-	cout << "Return  " << *item;
+	cout << "Return  ";
+	item->print(true);
 }
 
 //-----------------------------------------------------------------------------

@@ -27,8 +27,13 @@ User::~User() {
 //-----------------------------------------------------------------------------
 // print
 
-void User::print() const {
-    cout << idNumber << " " << lastName << " " << firstName << endl;
+void User::print(bool partial) const {
+	if(partial){
+		cout << idNumber;
+	}else{
+		cout << "*** Patron ID: " << idNumber << " " 
+			<< lastName << " " << firstName << endl;
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -103,9 +108,9 @@ int User::getIdNumber() {
 }
 
 //-----------------------------------------------------------------------------
-// setDataCommand
+// setDataPartial
 
-bool User::setDataCommand(istream &infile) {
+bool User::setDataPartial(istream &infile) {
     
     infile >> idNumber;
     

@@ -3,7 +3,7 @@
 #include "nodedata.h"
 
 ostream& operator<<(ostream & output, NodeData& data){
-	data.print();
+	data.print(false);
 	return output;
 }
 

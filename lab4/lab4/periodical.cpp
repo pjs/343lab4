@@ -20,9 +20,13 @@ Periodical::~Periodical(){
 	
 }
 
-void Periodical::print()const{
-	cout << setw(5) << amount << setw(4) << year << setw(2) << month
-		<< setw(30) << title << endl;
+void Periodical::print(bool partial)const{
+	if(!partial){
+		cout << setw(AVAIL_OUTPUT_WIDTH) << amount; 
+	}
+	cout << setw(YEAR_OUTPUT_WIDTH) << year << " " << setw(MO_OUTPUT_WIDTH) << 
+		month << " " << left << setw(TITLE_OUTPUT_WIDTH) << 
+		title.substr(0,TITLE_OUTPUT_WIDTH)  << endl;
 }
 bool Periodical::setData(istream & infile){
     amount = AMOUNT;
@@ -35,7 +39,7 @@ bool Periodical::setData(istream & infile){
 	return true;
 }
 
-bool Periodical::setDataCommand(istream & infile){
+bool Periodical::setDataPartial(istream & infile){
     char temp;
     infile >> temp;
     

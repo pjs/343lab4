@@ -19,9 +19,14 @@ YouthBook::~YouthBook() {
     
 }
 
-void YouthBook::print() const {
-	cout << setw(5) << amount << setw(20) << author << setw(30) << title << 
-	setw(4) << year << endl;
+void YouthBook::print(bool partial) const {
+	if(!partial){
+		cout << " " << left << setw(AVAIL_OUTPUT_WIDTH) << amount;
+	}
+	cout << left << setw(AUTHOR_OUTPUT_WIDTH) <<
+		author.substr(0,AUTHOR_OUTPUT_WIDTH) << " " << setw(TITLE_OUTPUT_WIDTH) 
+		<< title.substr(0,TITLE_OUTPUT_WIDTH) << " " << setw(YEAR_OUTPUT_WIDTH) 
+		<< year << endl;
 }
 
 bool YouthBook::setData(istream & infile){
@@ -36,7 +41,7 @@ bool YouthBook::setData(istream & infile){
 	return true;
 }
 
-bool YouthBook::setDataCommand(istream & infile){
+bool YouthBook::setDataPartial(istream & infile){
     char temp;
     infile >> temp;
     
