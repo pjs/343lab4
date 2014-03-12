@@ -22,11 +22,7 @@ Return::Return() {
 // destructor
 
 Return::~Return() {
-	if (user != NULL)
-        delete user;
-    
-    if (item != NULL)
-        delete item;
+
 }
 
 //-----------------------------------------------------------------------------
@@ -54,6 +50,11 @@ bool Return::execute(Library &library) {
     
     if (success) {
         User& foundUser = static_cast<User&>(*nodePtr);
+        
+        
+        delete user;
+        User* realUser = static_cast<User*>(nodePtr);
+        user = realUser;
         
         vector<Command*>& history = foundUser.getHistory();
         
@@ -92,23 +93,30 @@ bool Return::execute(Library &library) {
 			}
 			if(theStack.empty()){
 				success = foundItem.addItem();
+                delete item;
+                Item* foundItem = static_cast<Item*>(nodePtr);
+                item = foundItem;
 				history.push_back(this);
 			}else{
 				cout << "ERROR: item hasn't been checked out,";
                 cout << " can't return" << endl;
 				success = false;
+                delete item;
 			}
         }
         else {
             cout << "ERROR: item ";
             item->print(true);
             cout << " not found in library" << endl;
+            delete item;
         }
         
     }
     else {
         cout << "ERROR: user " << user->getIdNumber();
         cout << " not found in library" << endl;
+        delete user;
+        delete item;
     }
     
     

@@ -20,11 +20,7 @@ Checkout::Checkout() {
 // destructor
 
 Checkout::~Checkout() {
-    if (user != NULL)
-        delete user;
-    
-    if (item != NULL)
-        delete item;
+
 }
 
 //-----------------------------------------------------------------------------
@@ -54,6 +50,10 @@ bool Checkout::execute(Library &library) {
     if (success) {
         User& foundUser = static_cast<User&>(*nodePtr);
         
+        delete user;
+        User* realUser = static_cast<User*>(nodePtr);
+        user = realUser;
+        
         vector<Command*>& history = foundUser.getHistory();
         
         
@@ -64,21 +64,30 @@ bool Checkout::execute(Library &library) {
         if (success) {
             Item& foundItem = static_cast<Item&>(*nodePtr);
             success = foundItem.removeItem();
-            if(success) 
+            if(success) {
+                delete item;
+                Item* foundItem = static_cast<Item*>(nodePtr);
+                item = foundItem;
 				history.push_back(this);
-            else
+            }
+            else {
                 cout << "ERROR: no items available for checkout" << endl;
+                delete item;
+            }
         }
         else {
             cout << "ERROR: item ";
             item->print(true);
             cout << " not found in library" << endl;
+            delete item;
         }
         
     }
     else {
         cout << "ERROR: user " << user->getIdNumber();
         cout << " not found in library" << endl;
+        delete user;
+        delete item;
     }
     
     return success;
