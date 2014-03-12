@@ -30,8 +30,9 @@ void Periodical::print(bool partial)const{
 }
 
 void Periodical::printHeader() const {
-	cout << "Periodicals:" << endl << setw(5) << "AVAIL" << setw(4)
-    << "YEAR" << setw(2) << "MO" << setw(30) << "TITLE" << endl;
+	cout << "Periodicals:" << endl << setw(AVAIL_OUTPUT_WIDTH) << "AVAIL" << 
+		setw(YEAR_OUTPUT_WIDTH) << "YEAR" << setw(MO_OUTPUT_WIDTH) << " MO"
+		<< setw(TITLE_OUTPUT_WIDTH) << "  TITLE" << endl;
 }
 
 bool Periodical::setData(istream & infile){

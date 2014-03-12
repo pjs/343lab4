@@ -26,8 +26,9 @@ void FictionBook::print(bool partial) const{
 }
 
 void FictionBook::printHeader() const {
-	cout << "Fiction:" << endl << setw(5) << "AVAIL" << setw(20) << "AUTHOR"
-    << setw(30) << "TITLE" << setw(4) << "YEAR" << endl;
+	cout << "Fiction:" << endl << setw(AVAIL_OUTPUT_WIDTH) << "AVAIL  " << 
+		setw(AUTHOR_OUTPUT_WIDTH) << "AUTHOR" << setw(TITLE_OUTPUT_WIDTH) 
+		<< " TITLE" << setw(YEAR_OUTPUT_WIDTH) << "  YEAR" << endl;
 }
 
 bool FictionBook::setData(istream & infile){

@@ -85,8 +85,6 @@ bool Return::execute(Library &library) {
 					Return* retCommand = static_cast<Return*>(history[i]);
 					if(*retCommand->getItem() == foundItem){
 						theStack.push(retCommand);
-						cout << "retCommand: " << endl;
-						retCommand->print();
 					}
 				}
 				else if(history[i]->hash() == 'c' - 'a'){
@@ -158,7 +156,7 @@ bool Return::setData(istream &data) {
 //-----------------------------------------------------------------------------
 // print
 void Return::print() const{
-	cout << "Return  ";
+	cout << "RETURN    ";
 	item->print(true);
 }
 

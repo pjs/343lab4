@@ -51,7 +51,7 @@ bool DisplayHistory::execute(Library &library) {
         User& foundUser = static_cast<User&>(*nodePtr);
         
         vector<Command*> history = foundUser.getHistory();
-        
+        cout << foundUser << endl;
         for (int i = 0; i < history.size(); i++) {
             cout << *history[i] << endl;
         }

@@ -31,8 +31,9 @@ void YouthBook::print(bool partial) const {
 }
 
 void YouthBook::printHeader() const {
-	cout << "Youth:" << endl << setw(5) << "AVAIL" << setw(20)
-    << "AUTHOR" << setw(30) << "TITILE" << setw(4) << "YEAR" << endl;
+	cout << "Fiction:" << endl << setw(AVAIL_OUTPUT_WIDTH) << "AVAIL  " << 
+		setw(AUTHOR_OUTPUT_WIDTH) << "AUTHOR" << setw(TITLE_OUTPUT_WIDTH) 
+		<< " TITLE" << setw(YEAR_OUTPUT_WIDTH) << "  YEAR" << endl;
 }
 
 bool YouthBook::setData(istream & infile){
