@@ -31,6 +31,10 @@ void User::print() const {
     cout << idNumber << " " << lastName << " " << firstName << endl;
 }
 
+void User::printHeader() const {
+	
+}
+
 //-----------------------------------------------------------------------------
 // create
 

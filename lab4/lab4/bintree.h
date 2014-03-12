@@ -42,6 +42,7 @@ public:
     bool retrieve(const NodeData &, NodeData *&) const;  // find data
     void displaySideways() const;            // displays the tree sideways
     int getHeight(const NodeData &) const;   // height of node
+    NodeData* getRoot() const;
     
     void bstreeToArray(NodeData* []);        // moves tree to array
     void arrayToBSTree(NodeData* []);        // balanced tree from array

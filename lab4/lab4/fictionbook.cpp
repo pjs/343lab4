@@ -20,6 +20,11 @@ void FictionBook::print() const{
 		setw(4) << year << endl;
 }
 
+void FictionBook::printHeader() const {
+	cout << "Fiction:" << endl << setw(5) << "AVAIL" << setw(20) << "AUTHOR"
+    << setw(30) << "TITLE" << setw(4) << "YEAR" << endl;
+}
+
 bool FictionBook::setData(istream & infile){
     amount = AMOUNT;
 	infile.get();   

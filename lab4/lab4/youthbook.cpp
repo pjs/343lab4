@@ -20,8 +20,13 @@ YouthBook::~YouthBook() {
 }
 
 void YouthBook::print() const {
-	cout << setw(5) << amount << setw(20) << author << setw(30) << title << 
+	cout << setw(5) << amount << setw(20) << author << setw(30) << title <<
 	setw(4) << year << endl;
+}
+
+void YouthBook::printHeader() const {
+	cout << "Youth:" << endl << setw(5) << "AVAIL" << setw(20)
+    << "AUTHOR" << setw(30) << "TITILE" << setw(4) << "YEAR" << endl;
 }
 
 bool YouthBook::setData(istream & infile){

@@ -24,6 +24,12 @@ void Periodical::print()const{
 	cout << setw(5) << amount << setw(4) << year << setw(2) << month
 		<< setw(30) << title << endl;
 }
+
+void Periodical::printHeader() const {
+	cout << "Periodicals:" << endl << setw(5) << "AVAIL" << setw(4)
+    << "YEAR" << setw(2) << "MO" << setw(30) << "TITLE" << endl;
+}
+
 bool Periodical::setData(istream & infile){
     amount = AMOUNT;
 	infile.get();   

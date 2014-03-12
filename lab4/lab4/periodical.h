@@ -24,6 +24,7 @@ public:
 	virtual ~Periodical();
     
 	virtual void print() const;
+    virtual void printHeader() const;
 
 	virtual bool setData(istream &);
     virtual bool setDataCommand(istream &);

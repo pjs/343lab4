@@ -262,6 +262,13 @@ int BinTree::getHeight(const NodeData &target) const {
 }
 
 //-----------------------------------------------------------------------------
+// getRoot
+
+NodeData* BinTree::getRoot() const {
+    return root->data;
+}
+
+//-----------------------------------------------------------------------------
 // heightHelper
 // walks through every node in the tree checking for a matching node,
 // if found, calls another recursive helper function to determine the height
