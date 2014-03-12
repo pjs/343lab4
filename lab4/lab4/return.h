@@ -35,6 +35,9 @@ public:
 private:
     User* user;
     Item* item;
+    
+    bool userPtrElsewhere;
+    bool itemPtrElsewhere;
 
 };
 

@@ -15,6 +15,8 @@
 Return::Return() {
     user = NULL;
     item = NULL;
+    userPtrElsewhere = false;
+    itemPtrElsewhere = false;
 }
 
 
@@ -22,7 +24,10 @@ Return::Return() {
 // destructor
 
 Return::~Return() {
-
+    if (!userPtrElsewhere)
+        delete user;
+    if (!itemPtrElsewhere)
+        delete item;
 }
 
 //-----------------------------------------------------------------------------
@@ -55,6 +60,7 @@ bool Return::execute(Library &library) {
         delete user;
         User* realUser = static_cast<User*>(nodePtr);
         user = realUser;
+        userPtrElsewhere = true;
         
         vector<Command*>& history = foundUser.getHistory();
         
@@ -96,27 +102,24 @@ bool Return::execute(Library &library) {
                 delete item;
                 Item* foundItem = static_cast<Item*>(nodePtr);
                 item = foundItem;
+                itemPtrElsewhere = true;
 				history.push_back(this);
 			}else{
 				cout << "ERROR: item hasn't been checked out,";
                 cout << " can't return" << endl;
 				success = false;
-                delete item;
 			}
         }
         else {
             cout << "ERROR: item ";
             item->print(true);
             cout << " not found in library" << endl;
-            delete item;
         }
         
     }
     else {
         cout << "ERROR: user " << user->getIdNumber();
         cout << " not found in library" << endl;
-        delete user;
-        delete item;
     }
     
     
