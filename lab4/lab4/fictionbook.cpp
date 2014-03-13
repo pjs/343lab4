@@ -31,10 +31,9 @@ void FictionBook::print(bool partial) const {
 	if(!partial) {
 		cout << " " << left << setw(AVAIL_OUTPUT_WIDTH) << amount;
 	}
-	cout << left << setw(AUTHOR_OUTPUT_WIDTH) <<
-		author.substr(0,AUTHOR_OUTPUT_WIDTH) << " " << setw(TITLE_OUTPUT_WIDTH) 
-		<< title.substr(0,TITLE_OUTPUT_WIDTH) << " " << setw(YEAR_OUTPUT_WIDTH) 
-		<< year << endl;
+	cout  << setw(AUTHOR_OUTPUT_WIDTH) << author.substr(0,AUTHOR_OUTPUT_WIDTH) 
+		<< " " << setw(TITLE_OUTPUT_WIDTH) << title.substr(0,TITLE_OUTPUT_WIDTH)
+		<< " " << setw(YEAR_OUTPUT_WIDTH) << year << endl;
 }
 
 //-----------------------------------------------------------------------------
