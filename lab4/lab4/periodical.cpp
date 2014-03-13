@@ -53,7 +53,7 @@ void Periodical::printHeader() const {
 // build data from file
 
 bool Periodical::setData(istream & infile){
-    amount = AMOUNT;
+    amount = 1;
 	infile.get();   
 	getline(infile, title, ',');
 	infile >> this->month;
@@ -111,6 +111,7 @@ bool Periodical::operator<(const NodeData & right) const{
 	const Periodical& book = static_cast<const Periodical&>(right);
 	if(this->month < book.month) return true;
 	if(this->year < book.year) return true;
+	if(this->title < book.title) return true;
 	return false;
 }
 
@@ -119,8 +120,10 @@ bool Periodical::operator<(const NodeData & right) const{
 
 bool Periodical::operator<=(const NodeData & right) const{
 	const Periodical& book = static_cast<const Periodical&>(right);
-	if(this->month <= book.month) return true;
-	if(this->year <= book.year) return true;
+	if(this->month == book.month && this->year == book.year
+	&& this->title == book.title) return true;
+	if(this->month < book.month) return true;
+	if(this->year < book.year) return true;
 	return false;
 }
 
@@ -131,6 +134,7 @@ bool Periodical::operator>(const NodeData & right) const{
 	const Periodical& book = static_cast<const Periodical&>(right);
 	if(this->month > book.month) return true;
 	if(this->year > book.year) return true;
+	if(this->title > book.title) return true;
 	return false;
 }
 
@@ -138,9 +142,12 @@ bool Periodical::operator>(const NodeData & right) const{
 // operator>=
 
 bool Periodical::operator>=(const NodeData & right) const{
+
 	const Periodical& book = static_cast<const Periodical&>(right);
-	if(this->month >= book.month) return true;
-	if(this->year >= book.year) return true;
+	if(this->month == book.month && this->year == book.year
+	&& this->title == book.title) return true;
+	if(this->month > book.month) return true;
+	if(this->year > book.year) return true;
 	return false;
 }
 

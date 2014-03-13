@@ -40,7 +40,7 @@ protected:
     int amount;    // amount available in the library
     
 public:
-    Item(string = "", int = 0);   // constructor
+    Item(string = "", int = AMOUNT);   // constructor
     virtual ~Item();              // destructor
     virtual Item* create() = 0;   // clone item (for use in factory)
     

@@ -51,7 +51,7 @@ void YouthBook::print(bool partial) const {
 // display header information for the book
 
 void YouthBook::printHeader() const {
-	cout << "Fiction:" << endl << setw(AVAIL_OUTPUT_WIDTH) << "AVAIL  " << 
+	cout << "Youth:" << endl << setw(AVAIL_OUTPUT_WIDTH) << "AVAIL  " << 
 		setw(AUTHOR_OUTPUT_WIDTH) << "AUTHOR" << setw(TITLE_OUTPUT_WIDTH) 
 		<< " TITLE" << setw(YEAR_OUTPUT_WIDTH) << "  YEAR" << endl;
 }
@@ -112,6 +112,7 @@ bool YouthBook::operator<(const NodeData & right ) const{
 	const YouthBook& book = static_cast<const YouthBook&>(right);
 	if(this->title < book.title) return true;
 	if(this->author < book.author) return true;
+	if(this->year < book.year) return true;
 	return false;
 }
 
@@ -132,6 +133,7 @@ bool YouthBook::operator>(const NodeData & right ) const{
 	const YouthBook& book = static_cast<const YouthBook&>(right);
 	if(this->title > book.title) return true;
 	if(this->author > book.author) return true;
+	if(this->year > book.year) return true;
 	return false;
 }
 
