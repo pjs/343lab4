@@ -105,7 +105,8 @@ bool Periodical::operator>=(const NodeData & right) const{
 
 bool Periodical::operator==(const NodeData & right) const{
 	const Periodical& book = static_cast<const Periodical&>(right);
-	if(this->month == book.month && this->year == book.year) return true;
+	if(this->month == book.month && this->year == book.year
+		&& this->title == book.title) return true;
     return false;
 }
 
