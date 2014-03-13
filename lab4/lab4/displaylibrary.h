@@ -9,7 +9,11 @@
 // class DisplayLibrary
 //
 //
+// A command to display the library, to the console. 
 //
+//
+// Assumptions:
+// - displays the containts of only one library
 //
 //-----------------------------------------------------------------------------
 

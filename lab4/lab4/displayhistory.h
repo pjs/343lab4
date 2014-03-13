@@ -8,9 +8,12 @@
 //-----------------------------------------------------------------------------
 // class DisplayHistory
 //
+// A command to display the history of an user, to the console
 //
 //
-//
+// Assumptions:
+// - displays the history for only one user
+// 
 //-----------------------------------------------------------------------------
 
 #ifndef DISPLAYHISTORY_H

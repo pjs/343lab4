@@ -15,6 +15,18 @@
 
 using namespace std;
 
+//-----------------------------------------------------------------------------
+// class Item
+//
+// An item is a hashable class and a NodeData. Item is an abstract class and 
+// has different classes of items.
+//
+//
+// Assumptions:
+// - all items have one title
+// - all items have the amount of 5 when inciated
+//-----------------------------------------------------------------------------
+
 const static int TITLE_OUTPUT_WIDTH = 35;
 const static int AVAIL_OUTPUT_WIDTH = 6;
 const static int YEAR_OUTPUT_WIDTH = 4; 

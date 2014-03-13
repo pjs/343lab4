@@ -13,6 +13,15 @@
 
 using namespace std;
 
+//-----------------------------------------------------------------------------
+// class Item Factory
+//
+// This is a factory to create new, empty Item objects. 
+//
+// Assumptions:
+// - user gives the appropiate hash value for item, otherwise results may vary
+//
+//-----------------------------------------------------------------------------
 class ItemFactory {
 
 public:

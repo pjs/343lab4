@@ -13,6 +13,16 @@
 
 using namespace std;
 
+//-----------------------------------------------------------------------------
+// class FictionBook 
+//
+// FictionBook is a book, that is fictional. 
+//
+// Assumptions:
+// - all fiction books are hard copies
+// 
+//-----------------------------------------------------------------------------
+
 class FictionBook : public Book {
     
 

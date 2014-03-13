@@ -8,9 +8,13 @@
 //-----------------------------------------------------------------------------
 // class Checkout
 //
+// Checkout is a command. A Checkout command has a user and item to checkout
+// of the library. A checkout command checks the item out to the user. 
+// 
 //
-//
-//
+// Assumptions:
+// - a checkout only checks out one item at a time
+// 
 //-----------------------------------------------------------------------------
 
 #ifndef CHECKOUT_H
@@ -40,8 +44,8 @@ private:
     User* user;   // user inside the command
     Item* item;   // item inside the command
     
-    bool userPtrElsewhere;  // if deleting of user has already been done
-    bool itemPtrElsewhere;  // if deleting of item has already been done
+    bool userPtrElsewhere;  // user ptr is pointing to an obj elsewhere
+    bool itemPtrElsewhere;  // item ptr is pointing to an obj elsewhere
 
 };
 

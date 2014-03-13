@@ -13,21 +13,27 @@
 
 using namespace std;
 
+//-----------------------------------------------------------------------------
+// class book
+//
+// abstract class. A book is an item that contains both a year and an author
+//
+// Assumptions:
+// - a book only has one author
+//-----------------------------------------------------------------------------
 const static int AUTHOR_OUTPUT_WIDTH = 20;
 
 class Book : public Item {
     
 protected:
 
-    int year;
-	string author;
+    int year;			//year book is published
+	string author;		//author of the book
 
 
 public:
-    Book(string = "", string = "", int = 0);
 
-      
-    virtual int hash() const = 0;
+    Book(string = "", string = "", int = 0); //constructs a book
 
 };
 

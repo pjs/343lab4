@@ -12,6 +12,17 @@
 
 using namespace std;
 
+//-----------------------------------------------------------------------------
+// class CommandFactory
+//
+// The factory for commands. This class is designed to create different type of
+// command objects
+//
+//
+// Assumptions:
+// - user gives the appropiate hash value, otherwise results may vary
+//
+//-----------------------------------------------------------------------------
 class CommandFactory {
     
 public:

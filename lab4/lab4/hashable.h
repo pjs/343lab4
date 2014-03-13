@@ -10,6 +10,14 @@
 
 #include <iostream>
 
+//-----------------------------------------------------------------------------
+// class hashable 
+//
+// An abstract class that allows other items to be hashed. 
+//
+// Assumptions:
+// - each hashable class implements their own hash function 
+//-----------------------------------------------------------------------------
 using namespace std;
 
 class Hashable{
