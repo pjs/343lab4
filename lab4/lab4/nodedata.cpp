@@ -21,3 +21,6 @@ ostream& operator<<(ostream & output, NodeData& data){
 NodeData::~NodeData() {
 
 }
+
+
+
