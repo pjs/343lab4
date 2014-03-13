@@ -1,6 +1,1 @@
-comment code -- finished?
-check const
-readme
-
-compare output with discussion board
-read pdf again + assignment page notes
+all done!
