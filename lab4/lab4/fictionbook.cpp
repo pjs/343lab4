@@ -1,5 +1,5 @@
 //
-// fictionBook.cpp
+// fictionbook.cpp
 //
 // Paul Simpson
 // Trevor Olson
@@ -7,16 +7,28 @@
 
 #include "fictionbook.h"
 
+//-----------------------------------------------------------------------------
+// constructor
 
-FictionBook::FictionBook(string author, string title, int year) : 
-	Book(author, title, year){}
+FictionBook::FictionBook(string author, string title, int year) :
+    Book(author, title, year) {
+    
+}
+
+//-----------------------------------------------------------------------------
+// destructor
 
 FictionBook::~FictionBook() {
     
 }
 
-void FictionBook::print(bool partial) const{
-	if(!partial){
+//-----------------------------------------------------------------------------
+// print
+// displays formatted book information, doesn't display amount if parameter
+// is set to true
+
+void FictionBook::print(bool partial) const {
+	if(!partial) {
 		cout << " " << left << setw(AVAIL_OUTPUT_WIDTH) << amount;
 	}
 	cout << left << setw(AUTHOR_OUTPUT_WIDTH) <<
@@ -25,11 +37,19 @@ void FictionBook::print(bool partial) const{
 		<< year << endl;
 }
 
+//-----------------------------------------------------------------------------
+// printHeader
+// displays header information for the book
+
 void FictionBook::printHeader() const {
 	cout << "Fiction:" << endl << setw(AVAIL_OUTPUT_WIDTH) << "AVAIL  " << 
 		setw(AUTHOR_OUTPUT_WIDTH) << "AUTHOR" << setw(TITLE_OUTPUT_WIDTH) 
 		<< " TITLE" << setw(YEAR_OUTPUT_WIDTH) << "  YEAR" << endl;
 }
+
+//-----------------------------------------------------------------------------
+// setData
+// build book data from file
 
 bool FictionBook::setData(istream & infile){
     amount = AMOUNT;
@@ -43,16 +63,22 @@ bool FictionBook::setData(istream & infile){
 	return true;
 }
 
+//-----------------------------------------------------------------------------
+// setDataPartial
+// build partial data about the book from a file
+
 bool FictionBook::setDataPartial(istream & infile){
-    char temp;
+    char temp;      // temp char to check for hardcopy
     infile >> temp;
     
+    // make sure it is a hard copy
     if (temp != 'H') {
         string k;
         getline(infile, k);
         return false;
     }
     
+    // get rest of the information
 	infile.get();
 	getline(infile, author, ',');
 	infile.get();
@@ -62,13 +88,24 @@ bool FictionBook::setDataPartial(istream & infile){
 	return true;
 }
 
+//-----------------------------------------------------------------------------
+// hash
+// gets a hash for the book
+
 int FictionBook::hash() const{
 	return 'f' - 'a';
 }
 
+//-----------------------------------------------------------------------------
+// create
+// returns new clone for use in the factory
+
 FictionBook* FictionBook::create() {
     return new FictionBook();
 }
+
+//-----------------------------------------------------------------------------
+// operator<
 
 bool FictionBook::operator<(const NodeData & right) const{
 	const FictionBook& book = static_cast<const FictionBook&>(right);
@@ -76,18 +113,30 @@ bool FictionBook::operator<(const NodeData & right) const{
 	if(this->title < book.title) return true;
 	return false; 
 }
+
+//-----------------------------------------------------------------------------
+// constructor>
+
 bool FictionBook::operator>(const NodeData & right) const{
 	const FictionBook& book = static_cast<const FictionBook&>(right);
 	if(this->author > book.author) return true;
 	if(this->title > book.title) return true;
 	return false; 
 }
+
+//-----------------------------------------------------------------------------
+// constructor<=
+
 bool FictionBook::operator<=(const NodeData & right) const{
 	const FictionBook& book = static_cast<const FictionBook&>(right);
 	if(this->author <= book.author) return true;
 	if(this->title <= book.title) return true;
 	return false; 
 }
+
+//-----------------------------------------------------------------------------
+// constructor>=
+
 bool FictionBook::operator>=(const NodeData & right) const{
 	const FictionBook& book = static_cast<const FictionBook&>(right);
 	if(this->author >= book.author) return true;
@@ -95,11 +144,18 @@ bool FictionBook::operator>=(const NodeData & right) const{
 	return false; 
 }
 
+//-----------------------------------------------------------------------------
+// constructor==
+
 bool FictionBook::operator==(const NodeData & right) const{
 	const FictionBook& book = static_cast<const FictionBook&>(right);
 	if(this->author == book.author &&this->title == book.title ) return true;
 	return false; 
 }
+
+//-----------------------------------------------------------------------------
+// constructor!=
+
 bool FictionBook::operator!=(const NodeData & right) const{
 	return !(*this==right);
 }

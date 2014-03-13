@@ -27,6 +27,8 @@ User::~User() {
 
 //-----------------------------------------------------------------------------
 // print
+// print user information; if parameter is true it will only display their
+// id number
 
 void User::print(bool partial) const {
 	if(partial){
@@ -37,12 +39,17 @@ void User::print(bool partial) const {
 	}
 }
 
+//-----------------------------------------------------------------------------
+// printHeader
+// displays header of user information
+
 void User::printHeader() const {
 	
 }
 
 //-----------------------------------------------------------------------------
 // create
+// returns clone for use in the factory
 
 User* User::create() {
     return new User();
@@ -50,6 +57,7 @@ User* User::create() {
 
 //-----------------------------------------------------------------------------
 // setData
+// build user from file
 
 bool User::setData(istream &infile) {
   
@@ -60,32 +68,53 @@ bool User::setData(istream &infile) {
     return true;
 }
 
+//-----------------------------------------------------------------------------
+// operator==
+
 bool User::operator==(const NodeData &right) const {
 	const User& rightUser = static_cast<const User&>(right);
     
 	return (idNumber == rightUser.idNumber);
 }
 
+//-----------------------------------------------------------------------------
+// operator<
+
 bool User::operator<(const NodeData & right) const{
 	const User& rightUser = static_cast<const User&>(right);
     
 	return (idNumber < rightUser.idNumber);
 }
+
+//-----------------------------------------------------------------------------
+// operator>
+
 bool User::operator>(const NodeData & right) const{
 	const User& rightUser = static_cast<const User&>(right);
     
 	return (idNumber > rightUser.idNumber);
 }
+
+//-----------------------------------------------------------------------------
+// operator<=
+
 bool User::operator<=(const NodeData & right) const{
 	const User& rightUser = static_cast<const User&>(right);
     
 	return (idNumber <= rightUser.idNumber);
 }
+
+//-----------------------------------------------------------------------------
+// operator>=
+
 bool User::operator>=(const NodeData & right) const{
 	const User& rightUser = static_cast<const User&>(right);
     
 	return (idNumber >= rightUser.idNumber);
 }
+
+//-----------------------------------------------------------------------------
+// operator!=
 
 bool User::operator!=(const NodeData & right) const{
 	return !(*this==right);
@@ -93,6 +122,7 @@ bool User::operator!=(const NodeData & right) const{
 
 //-----------------------------------------------------------------------------
 // getHistory
+// returns user's history
 
 vector<Command*>& User::getHistory() {
     return history;
@@ -100,6 +130,7 @@ vector<Command*>& User::getHistory() {
 
 //-----------------------------------------------------------------------------
 // setDataPartial
+// builds user from partial data
 
 bool User::setDataPartial(istream &infile) {
     

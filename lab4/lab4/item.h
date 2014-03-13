@@ -5,6 +5,19 @@
 //  Trevor Olson
 //
 
+//-----------------------------------------------------------------------------
+// class Item
+//
+// An item is a hashable class and a NodeData. Item is an abstract class and
+// has different classes of items.
+//
+//
+// Assumptions:
+// - all items have one title
+// - all items have the amount of 5 when inciated
+// - item infile is formated properly
+//-----------------------------------------------------------------------------
+
 #ifndef ITEM_H
 #define ITEM_H
 
@@ -15,39 +28,24 @@
 
 using namespace std;
 
-//-----------------------------------------------------------------------------
-// class Item
-//
-// An item is a hashable class and a NodeData. Item is an abstract class and 
-// has different classes of items.
-//
-//
-// Assumptions:
-// - all items have one title
-// - all items have the amount of 5 when inciated
-// - item infile is formated properly
-//-----------------------------------------------------------------------------
-
-const static int TITLE_OUTPUT_WIDTH = 35;
-const static int AVAIL_OUTPUT_WIDTH = 6;
-const static int YEAR_OUTPUT_WIDTH = 4; 
-const static int AMOUNT = 5;
+const static int TITLE_OUTPUT_WIDTH = 35;  // title width
+const static int AVAIL_OUTPUT_WIDTH = 6;   // avail width
+const static int YEAR_OUTPUT_WIDTH = 4;    // year width
+const static int AMOUNT = 5;               // amount width
 
 class Item : public Hashable,  public NodeData {
 
 protected:
-    string title;
-    int amount;
+    string title;  // title of the item
+    int amount;    // amount available in the library
     
 public:
-    Item(string = "", int = 0);
-    virtual ~Item();
-    virtual Item* create() = 0;
+    Item(string = "", int = 0);   // constructor
+    virtual ~Item();              // destructor
+    virtual Item* create() = 0;   // clone item (for use in factory)
     
-    bool addItem();
-    bool removeItem();
-    
-    
+    bool addItem();    // increase item amount by one
+    bool removeItem(); // decrease item amount by one
     
 };
 

@@ -7,15 +7,15 @@
 
 #include "manager.h"
 
-int main()
-{
+int main() {
 
-    Manager test;
+    // Declare a Manager and then run() will read in all
+    // the commands, items, and users. It will then
+    // process the commands in the queue.
     
-    test.run();
-    
+    Manager SHHH;
+    SHHH.run();
     
     return 0;
-
 }
 

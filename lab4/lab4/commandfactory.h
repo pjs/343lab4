@@ -5,13 +5,6 @@
 //  Trevor Olson
 //
 
-#ifndef COMMANDFACTORY_H
-#define COMMANDFACTORY_H
-
-#include "command.h"
-
-using namespace std;
-
 //-----------------------------------------------------------------------------
 // class CommandFactory
 //
@@ -23,17 +16,25 @@ using namespace std;
 // - user gives the appropiate hash value, otherwise results may vary
 //
 //-----------------------------------------------------------------------------
+
+#ifndef COMMANDFACTORY_H
+#define COMMANDFACTORY_H
+
+#include "command.h"
+
+using namespace std;
+
 class CommandFactory {
     
 public:
-    CommandFactory();
-    ~CommandFactory();
-    Command* createIt(int);
-    bool isValid(int) const;
+    CommandFactory();        // destructor
+    ~CommandFactory();       // constructor
+    Command* createIt(int);  // builds requested object
+    bool isValid(int) const; // checks if object can be uilt
     
 private:
-    static const int FACTORY_SIZE = 26;
-    Command* objFactory[FACTORY_SIZE];
+    static const int FACTORY_SIZE = 26;  // room for objects in factory
+    Command* objFactory[FACTORY_SIZE];   // array of commands in factory
     
 };
 

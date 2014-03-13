@@ -5,7 +5,6 @@
 //  Trevor Olson
 //
 
-
 #include "userfactory.h"
 
 //-----------------------------------------------------------------------------
@@ -27,6 +26,7 @@ UserFactory::~UserFactory() {
 
 //-----------------------------------------------------------------------------
 // create
+// returns new user type that is requested
 
 User* UserFactory::createIt(int i) {
     return objFactory[i]->create();

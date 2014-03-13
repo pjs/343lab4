@@ -5,14 +5,6 @@
 //  Trevor Olson
 //
 
-#ifndef USERFACTORY_H
-#define USERFACTORY_H
-
-#include <iostream>
-#include "user.h"
-
-using namespace std;
-
 //-----------------------------------------------------------------------------
 // class UserFactory
 //
@@ -23,16 +15,25 @@ using namespace std;
 // -user gives the appropiate hash value, otherwise results may vary
 //
 //-----------------------------------------------------------------------------
+
+#ifndef USERFACTORY_H
+#define USERFACTORY_H
+
+#include <iostream>
+#include "user.h"
+
+using namespace std;
+
 class UserFactory {
     
 public:
-    UserFactory();
-    ~UserFactory();
-    User* createIt(int);
+    UserFactory();        // constructor
+    ~UserFactory();       // destructor
+    User* createIt(int);  // returns copy of requested user type
     
 private:
-    static const int FACTORY_SIZE = 1;
-    User* objFactory[FACTORY_SIZE];
+    static const int FACTORY_SIZE = 1;  // available types of users
+    User* objFactory[FACTORY_SIZE];     // factory of objects
 };
 
 #endif

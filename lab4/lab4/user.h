@@ -5,6 +5,17 @@
 //  Trevor Olson
 //
 
+//-----------------------------------------------------------------------------
+// class User
+//
+//
+// A user is a Nodedata. Users have first and last names and a unique ID
+// number. A user also has a history of commands ran using their ID number
+//
+// Assumptions:
+// - user input files are formated properly
+//-----------------------------------------------------------------------------
+
 #ifndef USER_H
 #define USER_H
 
@@ -16,34 +27,23 @@
 
 using namespace std;
 
-//-----------------------------------------------------------------------------
-// class User
-//
-//
-// A user is a Nodedata. Users have first and last names and a unique ID 
-// number. A user also has a history of commands ran using their ID number
-//
-// Assumptions:
-// - user input files are formated properly
-//-----------------------------------------------------------------------------
 class User : public NodeData {
 
 public:
-    User();
-    virtual ~User();
+    User();            // constructor
+    virtual ~User();   // destructor
     
+    virtual void printHeader() const;  // display header info
+	virtual void print(bool) const;    // display user info
 
-    virtual void printHeader() const;
-
-	virtual void print(bool) const;
-
-
-    User* create();
-    virtual bool setData(istream &);
-    virtual bool setDataPartial(istream &);
-
-	vector<Command*>& getHistory();
+    User* create();    // return clone (for factory)
     
+    virtual bool setData(istream &);         // set user data from file
+    virtual bool setDataPartial(istream &);  // set partial data from file
+
+	vector<Command*>& getHistory();  // return users history
+    
+    // equality operators
     virtual bool operator==(const NodeData &) const;
     virtual bool operator!=(const NodeData &) const;
     virtual bool operator<(const NodeData &) const;
@@ -52,10 +52,11 @@ public:
     virtual bool operator>=(const NodeData &) const;
     
 private:
-    string firstName;
-    string lastName;
-    int idNumber;
-    vector<Command*> history;
+    string firstName;   // first name of user
+    string lastName;    // last name of user
+    int idNumber;       // user's ID number
+    
+    vector<Command*> history; // user's history
 
 };
 

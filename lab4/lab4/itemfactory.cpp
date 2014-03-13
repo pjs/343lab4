@@ -35,6 +35,7 @@ ItemFactory::~ItemFactory() {
 
 //-----------------------------------------------------------------------------
 // create
+// returns clone of requested item
 
 Item* ItemFactory::createIt(int c) {
     c = tolower(c);
@@ -45,12 +46,13 @@ Item* ItemFactory::createIt(int c) {
 
 //-----------------------------------------------------------------------------
 // isValid
+// checks to see if item can be cloned
 
 bool ItemFactory::isValid(int c) const {
     c = tolower(c);
     int i = c - 'a';
     
-    if (i >= 0 && i <= 26)
+    if (i >= 0 && i <= FACTORY_SIZE)
         return objFactory[i] != NULL;
     else
         return false;

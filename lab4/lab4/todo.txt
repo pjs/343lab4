@@ -1,19 +1,6 @@
-//return book logic checking (if has been checked out, etc)
-//check memory leaks
-//error messages
-fix print / formatting
+comment code -- finished?
+check const
+readme
 
-use const ints instead of hard coding (array size 26, etc)
-make displayLibrary not hard coded
-
-comment code
-
-
-
-
-
-error message:
-    //check invalid user id
-    //invalid item
-    //invalid patron
-    incorrect command
+compare output with discussion board
+read pdf again + assignment page notes

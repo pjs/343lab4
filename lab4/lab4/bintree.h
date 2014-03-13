@@ -14,7 +14,7 @@
 //-----------------------------------------------------------------------------
 // class BinTree
 //
-// Stores a collection of NodeData objects in a binary tree.
+// Stores a collection of NodeData objects.
 //
 // Assumptions:
 //  -- two trees are equal if they have the same data and same structure

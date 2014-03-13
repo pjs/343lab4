@@ -5,25 +5,26 @@
 //  Trevor Olson
 //
 
+//-----------------------------------------------------------------------------
+// class Hashable
+//
+// An abstract class that allows other items to be hashed.
+//
+// Assumptions:
+// - each hashable class implements their own hash function
+//-----------------------------------------------------------------------------
+
 #ifndef HASHABLE_H
 #define HASHABLE_H
 
 #include <iostream>
 
-//-----------------------------------------------------------------------------
-// class hashable 
-//
-// An abstract class that allows other items to be hashed. 
-//
-// Assumptions:
-// - each hashable class implements their own hash function 
-//-----------------------------------------------------------------------------
 using namespace std;
 
-class Hashable{
+class Hashable {
     
 public:
-    virtual int hash() const = 0; 
+    virtual int hash() const = 0; // hash of object type
 };
 
 #endif

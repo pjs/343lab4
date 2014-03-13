@@ -5,7 +5,6 @@
 //  Trevor Olson
 //
 
-
 #include "manager.h"
 #include "user.h"
 #include <fstream>
@@ -23,33 +22,29 @@ Manager::Manager() {
 // destructor
 
 Manager::~Manager() {
-    while(!commands.empty()){
-		commands.pop();
-	}
+
 }
 
 //-----------------------------------------------------------------------------
 // run
+// builds data from files and runs the commands
 
 void Manager::run() {
     ifstream userFile("data4patrons.txt");
-    
     buildUsers(userFile);
 
 	ifstream itemFile("data4books.txt");
-    
 	buildItems(itemFile);
     
     ifstream commandFile("data4commands.txt");
-    
 	buildCommands(commandFile);
     
     processCommands();
-    
 }
 
 //-----------------------------------------------------------------------------
 // buildUsers
+// builds users from data file
 
 void Manager::buildUsers(istream& infile) {
     
@@ -78,11 +73,12 @@ void Manager::buildUsers(istream& infile) {
 
 //-----------------------------------------------------------------------------
 // buildItems
+// set item data from file
 
 void Manager::buildItems(istream& infile) {
     
     Item* ptr = NULL;       // temp pointer to hold new Item
-    char temp;
+    char temp;              // hold item type
     bool successfulRead;    // read good data
     for (;;) {
         infile >> temp;
@@ -120,11 +116,12 @@ void Manager::buildItems(istream& infile) {
 
 //-----------------------------------------------------------------------------
 // buildCommands
+// set command data from a file
 
 void Manager::buildCommands(istream& infile) {
     
     Command* ptr = NULL;    // temp pointer to hold new Command
-    char temp;
+    char temp;              // type of command
     bool successfulRead;    // read good data
     for (;;) {
         infile >> temp;
@@ -138,6 +135,7 @@ void Manager::buildCommands(istream& infile) {
             }
             if (successfulRead) {
                 
+                // add to queue
                 commands.push(ptr);
             }
             else {
@@ -158,11 +156,13 @@ void Manager::buildCommands(istream& infile) {
 
 //-----------------------------------------------------------------------------
 // processCommands
+// runs commands inside the queue
 
 void Manager::processCommands() {
-    Command* currentCommand = NULL;
-    bool result;
+    Command* currentCommand = NULL;   // current action to run
+    bool result;                      // should result be deleted
     
+    // run until all commands processed
     while (!commands.empty()) {
         
         currentCommand = commands.front();

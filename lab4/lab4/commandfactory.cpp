@@ -5,7 +5,6 @@
 //  Trevor Olson
 //
 
-
 #include "commandfactory.h"
 #include "displaylibrary.h"
 #include "displayhistory.h"
@@ -16,6 +15,8 @@
 // constructor
 
 CommandFactory::CommandFactory() {
+    
+    // initialize the factory objects
     for (int i = 0; i < FACTORY_SIZE; i++) {
         objFactory[i] = NULL;
     }
@@ -37,6 +38,8 @@ CommandFactory::~CommandFactory() {
 
 //-----------------------------------------------------------------------------
 // create
+// returns the requested command object by calling a cloning function
+// on the requested command
 
 Command* CommandFactory::createIt(int c) {
     c = tolower(c);
@@ -47,6 +50,7 @@ Command* CommandFactory::createIt(int c) {
 
 //-----------------------------------------------------------------------------
 // isValid
+// checks to see if hash of object can be built by the factory
 
 bool CommandFactory::isValid(int c) const {
     c = tolower(c);

@@ -5,6 +5,16 @@
 //  Trevor Olson
 //
 
+//-----------------------------------------------------------------------------
+// class YouthBook
+//
+// A book designed for youth readers
+//
+// Assumptions:
+// - all youth books are hard copies
+//
+//-----------------------------------------------------------------------------
+
 #ifndef YOUTHBOOK_H
 #define YOUTHBOOK_H
 
@@ -12,43 +22,26 @@
 
 using namespace std;
 
-//-----------------------------------------------------------------------------
-// class YouthBook 
-//
-// A book designed for youth readers 
-//
-// Assumptions:
-// - all youth books are hard copies
-// 
-//-----------------------------------------------------------------------------
 class YouthBook : public Book {
-
-    
-protected:
-
     
 public:
-    YouthBook(string = "", string = "", int = 0);
-    virtual ~YouthBook();
+    YouthBook(string = "", string = "", int = 0);  // constructor
+    virtual ~YouthBook();   // destructor
 
+    virtual void printHeader() const;        // print object header
+	virtual void print(bool) const;          // print object
 
-    virtual void printHeader() const;
+	virtual bool setData(istream &);         // set data from file
+    virtual bool setDataPartial(istream &);  // set partial data
 
-	virtual void print(bool) const;
+	virtual int hash() const;     // get hash of object
+    virtual YouthBook* create();  // return clone for factory
 
-    
-	virtual bool setData(istream &);
-    virtual bool setDataPartial(istream &);
-
-	virtual int hash() const;
-    virtual YouthBook* create();
-
+    // equality operators
     virtual bool operator<(const NodeData &) const;
     virtual bool operator>(const NodeData &) const;
     virtual bool operator<=(const NodeData &) const;
     virtual bool operator>=(const NodeData &) const;
-
-	
 	virtual bool operator==(const NodeData &) const;
 	virtual bool operator!=(const NodeData &) const;
 };
