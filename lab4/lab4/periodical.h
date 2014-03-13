@@ -32,7 +32,7 @@ protected:
     int year;   // year of publiciation
     
 public:
-    Periodical(string = "", int = 5, int = 0, int = 0);  // constructor
+    Periodical(string = "", int = 0, int = 0, int = 0);  // constructor
 	virtual ~Periodical();                               // destructor
 
     virtual void printHeader() const;    // print object header
