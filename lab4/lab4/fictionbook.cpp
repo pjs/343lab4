@@ -41,7 +41,7 @@ void FictionBook::print(bool partial) const {
 // displays header information for the book
 
 void FictionBook::printHeader() const {
-	cout << "Fiction:" << endl << setw(AVAIL_OUTPUT_WIDTH) << "AVAIL  " << 
+	cout << "Fiction:" << endl << left << setw(AVAIL_OUTPUT_WIDTH) << "AVAIL  " << 
 		setw(AUTHOR_OUTPUT_WIDTH) << "AUTHOR" << setw(TITLE_OUTPUT_WIDTH) 
 		<< " TITLE" << setw(YEAR_OUTPUT_WIDTH) << "  YEAR" << endl;
 }
