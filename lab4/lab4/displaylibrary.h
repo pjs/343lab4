@@ -5,6 +5,14 @@
 //  Trevor Olson
 //
 
+//-----------------------------------------------------------------------------
+// class DisplayLibrary
+//
+//
+//
+//
+//-----------------------------------------------------------------------------
+
 #ifndef DISPLAYLIBRARY_H
 #define DISPLAYLIBRARY_H
 
@@ -16,20 +24,18 @@ using namespace std;
 class DisplayLibrary : public Command {
 
 public:
-    DisplayLibrary();
-    virtual ~DisplayLibrary();
+    DisplayLibrary();          // constructor
+    virtual ~DisplayLibrary(); // destructor
 
       
-    virtual int hash() const;
-    virtual Command* create();
-    virtual bool execute(Library &);
-    
-    virtual bool setData(istream &);
-	
-	virtual void print() const;
+    virtual int hash() const;         // returns hash of command
+    virtual Command* create();        // returns clone (for factory)
+    virtual bool execute(Library &);  // runs command on library
+    virtual bool setData(istream &);  // builds data from file
+	virtual void print() const;       // displays the command
     
 private:
-    static const int FACTORY_SIZE = 26;
+    static const int FACTORY_SIZE = 26;  // size of objects in factory
 
 };
 

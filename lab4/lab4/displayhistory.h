@@ -5,6 +5,14 @@
 //  Trevor Olson
 //
 
+//-----------------------------------------------------------------------------
+// class DisplayHistory
+//
+//
+//
+//
+//-----------------------------------------------------------------------------
+
 #ifndef DISPLAYHISTORY_H
 #define DISPLAYHISTORY_H
 
@@ -16,19 +24,17 @@ using namespace std;
 class DisplayHistory : public Command {
 
 public:
-    DisplayHistory();
-    virtual ~DisplayHistory();
+    DisplayHistory();           // constructor
+    virtual ~DisplayHistory();  // destructor
 
-      
-    virtual int hash() const;
-    virtual Command* create();
-    virtual bool execute(Library &);
+    virtual int hash() const;         // returns hash of the command
+    virtual Command* create();        // returns clone (for factory)
+    virtual bool execute(Library &);  // runs command on library
+    virtual bool setData(istream &);  // sets command data from file
+	virtual void print() const;       // displays the command
     
-    virtual bool setData(istream &);
-
-	virtual void print() const;
 private:
-    User* user;
+    User* user;  // related user history to display
 
 };
 

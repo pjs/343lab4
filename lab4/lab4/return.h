@@ -5,6 +5,14 @@
 //  Trevor Olson
 //
 
+//-----------------------------------------------------------------------------
+// class Return
+//
+//
+//
+//
+//-----------------------------------------------------------------------------
+
 #ifndef RETURN_H
 #define RETURN_H
 
@@ -18,26 +26,22 @@ using namespace std;
 class Return : public Command {
 
 public:
-    Return();
-    virtual ~Return();
+    Return();           // destructor
+    virtual ~Return();  // constructor
 
-      
-    virtual int hash() const;
-    virtual Command* create();
-    virtual bool execute(Library &);
-    
-    virtual bool setData(istream &);
-
-	virtual void print() const;
-
-	Item* getItem() const;
+    virtual int hash() const;        // returns hash of command
+    virtual Command* create();       // returns a clone (for factory)
+    virtual bool execute(Library &); // runs the return on a library
+    virtual bool setData(istream &); // sets return data from file
+	virtual void print() const;      // prints the return command
+	Item* getItem() const;           // returns the item inside the return
     
 private:
-    User* user;
-    Item* item;
+    User* user;    // user belonging to the return
+    Item* item;    // item belonging to the return
     
-    bool userPtrElsewhere;
-    bool itemPtrElsewhere;
+    bool userPtrElsewhere;  // keeps track of user being deleted already
+    bool itemPtrElsewhere;  // keeps track of item being deleted already
 
 };
 
