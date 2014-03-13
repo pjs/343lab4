@@ -8,9 +8,11 @@
 //-----------------------------------------------------------------------------
 // class Return
 //
+// A return is a command that returns the item to the library, that is 
+// checked out by the user
 //
-//
-//
+// Assumptions:
+// - only one return happens per return command
 //-----------------------------------------------------------------------------
 
 #ifndef RETURN_H

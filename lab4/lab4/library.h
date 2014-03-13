@@ -19,11 +19,11 @@ class User;
 //-----------------------------------------------------------------------------
 // class Library
 //
-// A library 
+// A library contains zero to many items and users 
 //
 //
 // Assumptions:
-//
+// - items are hashable
 //
 //-----------------------------------------------------------------------------
 class Library {

@@ -25,6 +25,7 @@ using namespace std;
 // Assumptions:
 // - all items have one title
 // - all items have the amount of 5 when inciated
+// - item infile is formated properly
 //-----------------------------------------------------------------------------
 
 const static int TITLE_OUTPUT_WIDTH = 35;

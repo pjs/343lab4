@@ -9,7 +9,16 @@
 #define PERIODICAL_H
 
 #include "item.h"
-
+//-----------------------------------------------------------------------------
+// class Periodical
+//
+//
+// A periodical is a item that has a month and year associated to it
+//
+// Assumptions:
+// - all periodicals have months and years
+// 
+//-----------------------------------------------------------------------------
 using namespace std;
 
 const static int MO_OUTPUT_WIDTH = 3; 

@@ -12,6 +12,15 @@
 
 using namespace std;
 
+//-----------------------------------------------------------------------------
+// class YouthBook 
+//
+// A book designed for youth readers 
+//
+// Assumptions:
+// - all youth books are hard copies
+// 
+//-----------------------------------------------------------------------------
 class YouthBook : public Book {
 
     

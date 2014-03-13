@@ -18,6 +18,18 @@
 
 using namespace std;
 
+//-----------------------------------------------------------------------------
+// class manager 
+//
+// The manager handles all operations with the library. It helps add the
+// users to the library, items to the library and it runs through the 
+// commands on the library. 
+//
+// Assumptions:
+// - there is only one library
+// - patron, command and item read in files are fomated properly 
+//
+//-----------------------------------------------------------------------------
 class Manager {
     
 public:

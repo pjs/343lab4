@@ -5,8 +5,8 @@
 #include <iomanip>
 using namespace std;
 
-// simple class containing one string to use for testing
-// not necessary to comment further
+// simple abstract class to allow tree to consist
+// of multiple classes
 
 class NodeData {
 

@@ -13,6 +13,16 @@
 
 using namespace std;
 
+//-----------------------------------------------------------------------------
+// class UserFactory
+//
+//
+// The factory for users. This class creates new, empty user objects
+//
+// Assumptions:
+// -user gives the appropiate hash value, otherwise results may vary
+//
+//-----------------------------------------------------------------------------
 class UserFactory {
     
 public:

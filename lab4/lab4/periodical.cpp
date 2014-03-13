@@ -22,7 +22,7 @@ Periodical::~Periodical(){
 
 void Periodical::print(bool partial)const{
 	if(!partial){
-		cout << setw(AVAIL_OUTPUT_WIDTH) << amount; 
+		cout << " " << setw(AVAIL_OUTPUT_WIDTH) << amount; 
 	}
 	cout << setw(YEAR_OUTPUT_WIDTH) << year << " " << setw(MO_OUTPUT_WIDTH) << 
 		month << " " << left << setw(TITLE_OUTPUT_WIDTH) << 
@@ -31,7 +31,7 @@ void Periodical::print(bool partial)const{
 
 void Periodical::printHeader() const {
 	cout << "Periodicals:" << endl << setw(AVAIL_OUTPUT_WIDTH) << "AVAIL" << 
-		setw(YEAR_OUTPUT_WIDTH) << "YEAR" << setw(MO_OUTPUT_WIDTH) << " MO"
+		setw(YEAR_OUTPUT_WIDTH) << " YEAR" << setw(MO_OUTPUT_WIDTH) << " MO"
 		<< setw(TITLE_OUTPUT_WIDTH) << "  TITLE" << endl;
 }
 
