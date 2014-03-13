@@ -17,7 +17,7 @@
 //
 // Assumptions:
 // - all periodicals have months and years
-// 
+// - all periodicals are hard copies
 //-----------------------------------------------------------------------------
 using namespace std;
 
