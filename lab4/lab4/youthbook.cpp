@@ -111,18 +111,7 @@ YouthBook* YouthBook::create() {
 bool YouthBook::operator<(const NodeData & right ) const{
 	const YouthBook& book = static_cast<const YouthBook&>(right);
 	if(this->title < book.title) return true;
-	if(this->author < book.author) return true;
-	if(this->year < book.year) return true;
-	return false;
-}
-
-//-----------------------------------------------------------------------------
-// operator<=
-
-bool YouthBook::operator<=(const NodeData & right ) const{
-	const YouthBook& book = static_cast<const YouthBook&>(right);
-	if(this->title <= book.title) return true;
-	if(this->author <= book.author) return true;
+	if(this->title == book.title && this->author < book.author) return true;
 	return false;
 }
 
@@ -132,18 +121,7 @@ bool YouthBook::operator<=(const NodeData & right ) const{
 bool YouthBook::operator>(const NodeData & right ) const{
 	const YouthBook& book = static_cast<const YouthBook&>(right);
 	if(this->title > book.title) return true;
-	if(this->author > book.author) return true;
-	if(this->year > book.year) return true;
-	return false;
-}
-
-//-----------------------------------------------------------------------------
-// operator>=
-
-bool YouthBook::operator>=(const NodeData & right ) const{
-	const YouthBook& book = static_cast<const YouthBook&>(right);
-	if(this->title >= book.title) return true;
-	if(this->author >= book.author) return true;
+	if(this->title == book.title && this->author > book.author) return true;
 	return false;
 }
 

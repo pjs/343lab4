@@ -36,8 +36,7 @@ public:
     virtual bool operator!=(const NodeData &) const = 0;
     virtual bool operator<(const NodeData &) const = 0;
     virtual bool operator>(const NodeData &) const = 0;
-    virtual bool operator<=(const NodeData &) const = 0;
-    virtual bool operator>=(const NodeData &) const = 0;
+
 };
 
 #endif

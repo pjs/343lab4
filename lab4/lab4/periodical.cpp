@@ -109,21 +109,10 @@ Periodical* Periodical::create() {
 
 bool Periodical::operator<(const NodeData & right) const{
 	const Periodical& book = static_cast<const Periodical&>(right);
-	if(this->month < book.month) return true;
 	if(this->year < book.year) return true;
-	if(this->title < book.title) return true;
-	return false;
-}
-
-//-----------------------------------------------------------------------------
-// operator<=
-
-bool Periodical::operator<=(const NodeData & right) const{
-	const Periodical& book = static_cast<const Periodical&>(right);
-	if(this->month == book.month && this->year == book.year
-	&& this->title == book.title) return true;
-	if(this->month < book.month) return true;
-	if(this->year < book.year) return true;
+	if(this->year == book.year && this->month < book.month) return true;
+	if(this->month == book.month && this->year == book.year && this->title 
+		< book.title) return true;
 	return false;
 }
 
@@ -132,22 +121,10 @@ bool Periodical::operator<=(const NodeData & right) const{
 
 bool Periodical::operator>(const NodeData & right) const{
 	const Periodical& book = static_cast<const Periodical&>(right);
-	if(this->month > book.month) return true;
 	if(this->year > book.year) return true;
-	if(this->title > book.title) return true;
-	return false;
-}
-
-//-----------------------------------------------------------------------------
-// operator>=
-
-bool Periodical::operator>=(const NodeData & right) const{
-
-	const Periodical& book = static_cast<const Periodical&>(right);
-	if(this->month == book.month && this->year == book.year
-	&& this->title == book.title) return true;
-	if(this->month > book.month) return true;
-	if(this->year > book.year) return true;
+	if(this->year == book.year && this->month > book.month) return true;
+	if(this->month == book. month && this->year == book.year && this->title
+		> book.title) return true;
 	return false;
 }
 

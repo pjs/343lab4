@@ -109,8 +109,8 @@ FictionBook* FictionBook::create() {
 bool FictionBook::operator<(const NodeData & right) const{
 	const FictionBook& book = static_cast<const FictionBook&>(right);
 	if(this->author < book.author) return true;
-	if(this->title < book.title) return true;
-	if(this->year < book.year) return true;
+	if(this->author == book.author && this->title < book.title)
+		return true;
 	return false; 
 }
 
@@ -120,28 +120,8 @@ bool FictionBook::operator<(const NodeData & right) const{
 bool FictionBook::operator>(const NodeData & right) const{
 	const FictionBook& book = static_cast<const FictionBook&>(right);
 	if(this->author > book.author) return true;
-	if(this->title > book.title) return true;
-	if(this->year > book.year) return true;
-	return false; 
-}
-
-//-----------------------------------------------------------------------------
-// constructor<=
-
-bool FictionBook::operator<=(const NodeData & right) const{
-	const FictionBook& book = static_cast<const FictionBook&>(right);
-	if(this->author <= book.author) return true;
-	if(this->title <= book.title) return true;
-	return false; 
-}
-
-//-----------------------------------------------------------------------------
-// constructor>=
-
-bool FictionBook::operator>=(const NodeData & right) const{
-	const FictionBook& book = static_cast<const FictionBook&>(right);
-	if(this->author >= book.author) return true;
-	if(this->title >= book.title) return true;
+	if(this->author == book.author && this->title > book.title) 
+		return true;
 	return false; 
 }
 

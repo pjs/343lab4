@@ -40,8 +40,6 @@ public:
     // equality operators
     virtual bool operator<(const NodeData &) const;
     virtual bool operator>(const NodeData &) const;
-    virtual bool operator<=(const NodeData &) const;
-    virtual bool operator>=(const NodeData &) const;
 	virtual bool operator==(const NodeData &) const;
 	virtual bool operator!=(const NodeData &) const;
 };
